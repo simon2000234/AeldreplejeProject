@@ -1,0 +1,13 @@
+language: csharp
+mono: none
+dotnet: 2.2
+solution: AeldreplejeProject.sln
+
+script:
+ - dotnet restore
+ - dotnet build
+ 
+ # safelist
+branches:
+  only:
+  - Developer
