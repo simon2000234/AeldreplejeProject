@@ -22,7 +22,7 @@ namespace AeldreplejeCore.Core.Application.Impl
 
         public User DeleteUser(int id)
         {
-            return _userRepository.DeleteUser(id)
+            return _userRepository.DeleteUser(id);
         }
 
         public List<User> GetAllUsers()
