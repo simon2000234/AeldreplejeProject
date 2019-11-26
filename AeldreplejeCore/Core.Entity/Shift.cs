@@ -11,6 +11,6 @@ namespace AeldreplejeCore.Core.Entity
         public DateTime TimeEnd { get; set; }
         public Route Route { get; set; }
         public bool ActiveRoute { get; set; }
-        public User User { get; set; }
+        //public User User { get; set; }
     }
 }

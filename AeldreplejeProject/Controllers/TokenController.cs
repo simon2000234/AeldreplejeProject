@@ -27,7 +27,7 @@ namespace AeldreplejeAPI.Controllers
         [HttpPost]
         public IActionResult Login([FromBody]LoginInputModel model)
         {
-            var user = repository.LogIn().FirstOrDefault(u => u.Name == model.Name);
+            var user = repository.LogIn().FirstOrDefault(u => u.Name == model.Username);
 
             // check if username exists
             if (user == null)
