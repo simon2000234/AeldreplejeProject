@@ -16,13 +16,14 @@ namespace AeldreplejeAPI.Controllers
             {
                 _groupService = groupService;
             }
+
             // GET api/groups
             [HttpGet]
             public ActionResult<IEnumerable<Group>> Get()
             {
                 try
                 {
-                    return _groupService.GetAllGroups();               
+                    return _groupService.GetAllGroups();
                 }
                 catch (Exception e)
                 {
@@ -85,5 +86,6 @@ namespace AeldreplejeAPI.Controllers
                     return BadRequest(e.Message);
                 }
             }
+        }
     }
 }
