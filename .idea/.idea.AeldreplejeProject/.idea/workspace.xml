@@ -8,18 +8,23 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/UserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Infrastructure/Class1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AeldreplejeProject/Controllers/UsersController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/UserRepo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Infrastructure/AeldrePlejeContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AeldreplejeProject/Controllers/ShiftController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IUserRepo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeProject/Controllers/GroupController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IGroupRepo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/GroupRepo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/GroupService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/IGroupService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/ShiftRepo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/ShiftService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IShiftRepo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/IShiftService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/UserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeProject/Controllers/UsersController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/UserRepo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/AeldrePlejeContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Entity/Shift.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IUserRepo.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -27,9 +32,15 @@
         <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IShiftRepo.cs" />
         <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Application/IShiftService.cs" />
         <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/ShiftService.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeProject/Controllers/ShiftController.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/IGroupService.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IGroupRepo.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Application/IGroupService.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/GroupService.cs" />
         <option value="$PROJECT_DIR$/Infrastructure/AeldrePlejeContext.cs" />
         <option value="$PROJECT_DIR$/Infrastructure/Repositories/ShiftRepo.cs" />
-        <option value="$PROJECT_DIR$/AeldreplejeProject/Controllers/ShiftController.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repositories/GroupRepo.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeProject/Controllers/GroupController.cs" />
       </list>
     </option>
   </component>

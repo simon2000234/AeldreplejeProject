@@ -20,5 +20,8 @@ namespace AeldreplejeInfrastructure
 
         public DbSet<User> Users { get; set; }
         public DbSet<Shift> Shifts { get; set; }
+        public DbSet<Group> Groups { get; set; }
+        public DbSet<Route> Routes { get; set; }
+        public DbSet<PendingShift> PendingShifts { get; set; }
     }
 }

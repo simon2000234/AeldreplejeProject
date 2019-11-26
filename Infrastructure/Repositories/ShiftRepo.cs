@@ -17,8 +17,7 @@ namespace AeldreplejeInfrastructure.Repositories
         
         public List<Shift> GetAllShifts()
         {
-            return _context.Shifts
-                .ToList(); ;
+            return _context.Shifts.ToList(); 
         }
 
         public Shift GetShift(int id)
