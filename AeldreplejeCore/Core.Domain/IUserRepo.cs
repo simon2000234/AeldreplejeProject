@@ -12,5 +12,7 @@ namespace AeldreplejeCore.Core.Domain
         User CreateUser(User user);
         User UpdateUser(User user);
         User DeleteUser(int id);
+        List<User> LogIn();
+
     }
 }

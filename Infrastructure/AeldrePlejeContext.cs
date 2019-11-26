@@ -8,13 +8,14 @@ namespace AeldreplejeInfrastructure
 {
     public class AeldrePlejeContext : DbContext
     {
-        public AeldrePlejeContext(DbContextOptions opt) : base(opt)
+        public AeldrePlejeContext(DbContextOptions<AeldrePlejeContext> opt) : base(opt)
         {
 
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<User>().HasKey(u => u.Id);
         }
 
 
