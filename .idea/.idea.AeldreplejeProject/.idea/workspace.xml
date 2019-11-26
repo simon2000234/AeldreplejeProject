@@ -8,7 +8,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/AeldreplejeProject/Controllers/RouteController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/RouteService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AeldreplejeProject/Controllers/ShiftController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/IRouteService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IRouteRepo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/RouteRepo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AeldreplejeProject/Controllers/GroupController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IGroupRepo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/GroupRepo.cs" root0="FORCE_HIGHLIGHTING" />
@@ -52,6 +57,11 @@
         <option value="$PROJECT_DIR$/Infrastructure/Repositories/PendingShiftRepo.cs" />
         <option value="$PROJECT_DIR$/AeldreplejeProject/Controllers/GroupController.cs" />
         <option value="$PROJECT_DIR$/AeldreplejeProject/Controllers/PendingShiftController.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Application/IRouteService.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IRouteRepo.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/RouteService.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repositories/RouteRepo.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeProject/Controllers/RouteController.cs" />
       </list>
     </option>
   </component>

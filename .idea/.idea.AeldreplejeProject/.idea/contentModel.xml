@@ -12,16 +12,19 @@
           <e p="Impl" t="Include">
             <e p="GroupService.cs" t="Include" />
             <e p="PendingShiftService.cs" t="Include" />
+            <e p="RouteService.cs" t="Include" />
             <e p="ShiftService.cs" t="Include" />
             <e p="UserService.cs" t="Include" />
           </e>
           <e p="IPendingShiftService.cs" t="Include" />
+          <e p="IRouteService.cs" t="Include" />
           <e p="IShiftService.cs" t="Include" />
           <e p="IUserService.cs" t="Include" />
         </e>
         <e p="Core.Domain" t="Include">
           <e p="IGroupRepo.cs" t="Include" />
           <e p="IPendingShiftRepo.cs" t="Include" />
+          <e p="IRouteRepo.cs" t="Include" />
           <e p="IShiftRepo.cs" t="Include" />
           <e p="IUserRepo.cs" t="Include" />
         </e>
@@ -48,6 +51,7 @@
         <e p="Controllers" t="Include">
           <e p="GroupController.cs" t="Include" />
           <e p="PendingShiftController.cs" t="Include" />
+          <e p="RouteController.cs" t="Include" />
           <e p="ShiftController.cs" t="Include" />
           <e p="UsersController.cs" t="Include" />
           <e p="ValuesController.cs" t="Include" />
@@ -80,6 +84,7 @@
         <e p="Repositories" t="Include">
           <e p="GroupRepo.cs" t="Include" />
           <e p="PendingShiftRepo.cs" t="Include" />
+          <e p="RouteRepo.cs" t="Include" />
           <e p="ShiftRepo.cs" t="Include" />
           <e p="UserRepo.cs" t="Include" />
         </e>
