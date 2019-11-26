@@ -6,8 +6,6 @@ namespace AeldreplejeInfrastructure
     {
         public static void SeedDB(AeldrePlejeContext ctx)
         {
-            ctx.Database.EnsureCreated();
-
             string password = "password";
             byte[] passwordHashUserOne, passwordSaltUserOne, passwordHashUserTwo, passwordSaltUserTwo;
 

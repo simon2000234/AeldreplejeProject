@@ -87,6 +87,8 @@ namespace AeldreplejeAPI
                 if (Environment.IsDevelopment())
                 {
                     var ctx = scope.ServiceProvider.GetService<AeldrePlejeContext>();
+                    ctx.Database.EnsureDeleted();
+                    ctx.Database.EnsureCreated();
                     DBInit.SeedDB(ctx);
                 }
                 else
