@@ -32,6 +32,11 @@ namespace AeldreplejeInfrastructure.Repositories
             return user;
         }
 
+        public List<User> LogIn()
+        {
+            return _context.Users.ToList();
+        }
+
         public List<User> GetAllUsers()
         {
             return _context.Users
