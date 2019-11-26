@@ -1,27 +1,28 @@
 using System;
 using System.Collections.Generic;
+using AeldreplejeCore.Core.Application;
 using AeldreplejeCore.Core.Application.Impl;
 using AeldreplejeCore.Core.Entity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AeldreplejeAPI.Controllers
 {
-    public class GroupController : Controller
+    public class PendingShiftController : Controller
     {
-        private IGroupService _groupService;
+        private IPendingShiftService _pendingShiftService;
 
-            public GroupController(IGroupService groupService)
+            public PendingShiftController(IPendingShiftService pendingShiftService)
             {
-                _groupService = groupService;
+                _pendingShiftService = pendingShiftService;
             }
 
-            // GET api/groups
+            // GET api/pendingShifts
             [HttpGet]
-            public ActionResult<IEnumerable<Group>> Get()
+            public ActionResult<IEnumerable<PendingShift>> Get()
             {
                 try
                 {
-                    return _groupService.GetAllGroups();
+                    return _pendingShiftService.GetAllPendingShift();
                 }
                 catch (Exception e)
                 {
@@ -29,13 +30,13 @@ namespace AeldreplejeAPI.Controllers
                 }
             }
 
-            // POST api/groups
+            // POST api/pendingShifts
             [HttpPost]
-            public ActionResult<Group> Post([FromBody] Group group)
+            public ActionResult<PendingShift> Post([FromBody] PendingShift pendingShift)
             {
                 try
                 {
-                    return Ok(_groupService.CreateGroup(group));
+                    return Ok(_pendingShiftService.CreatePendingShift(pendingShift));
                 }
                 catch (Exception e)
                 {
@@ -43,13 +44,13 @@ namespace AeldreplejeAPI.Controllers
                 }
             }
 
-            // GET api/groups/5
+            // GET api/pendingShifts/5
             [HttpGet("{id}")]
-            public ActionResult<Group> Get(int id)
+            public ActionResult<PendingShift> Get(int id)
             {
                 try
                 {
-                    return Ok(_groupService.GetGroup(id));
+                    return Ok(_pendingShiftService.GetPendingShift(id));
                 }
                 catch (Exception e)
                 {
@@ -57,13 +58,13 @@ namespace AeldreplejeAPI.Controllers
                 }
             }
 
-            // PUT api/groups/5
+            // PUT api/pendingShifts/5
             [HttpPut("{id}")]
-            public ActionResult<Group> Put(int id, [FromBody] Group group)
+            public ActionResult<PendingShift> Put(int id, [FromBody] PendingShift pendingShift)
             {
                 try
                 {
-                    return Ok(_groupService.UpdateGroup(group));
+                    return Ok(_pendingShiftService.UpdatePendingShift(pendingShift));
                 }
                 catch (Exception e)
                 {
@@ -71,13 +72,13 @@ namespace AeldreplejeAPI.Controllers
                 }
             }
 
-            // DELETE api/groups/5
+            // DELETE api/pendingShifts/5
             [HttpDelete("{id}")]
-            public ActionResult<Group> Delete(int id)
+            public ActionResult<PendingShift> Delete(int id)
             {
                 try
                 {
-                    return Ok(_groupService.DeleteGroup(id));
+                    return Ok(_pendingShiftService.DeletePendingShift(id));
                 }
                 catch (Exception e)
                 {

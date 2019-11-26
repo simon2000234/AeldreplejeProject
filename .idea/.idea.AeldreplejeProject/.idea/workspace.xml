@@ -13,8 +13,13 @@
     <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IGroupRepo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/GroupRepo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/GroupService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeProject/Controllers/PendingShiftController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/IGroupService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/IPendingShiftService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/PendingShiftService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IPendingShiftRepo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/ShiftRepo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/PendingShiftRepo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/ShiftService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IShiftRepo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/IShiftService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -39,8 +44,14 @@
         <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/GroupService.cs" />
         <option value="$PROJECT_DIR$/Infrastructure/AeldrePlejeContext.cs" />
         <option value="$PROJECT_DIR$/Infrastructure/Repositories/ShiftRepo.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repositories/PendingShift.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Application/IPendingShiftService.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IPendingShiftRepo.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/PendingShiftService.cs" />
         <option value="$PROJECT_DIR$/Infrastructure/Repositories/GroupRepo.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repositories/PendingShiftRepo.cs" />
         <option value="$PROJECT_DIR$/AeldreplejeProject/Controllers/GroupController.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeProject/Controllers/PendingShiftController.cs" />
       </list>
     </option>
   </component>
