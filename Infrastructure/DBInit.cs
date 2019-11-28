@@ -1,4 +1,5 @@
-﻿using AeldreplejeCore.Core.Entity;
+﻿using System.Collections.Generic;
+using AeldreplejeCore.Core.Entity;
 
 namespace AeldreplejeInfrastructure
 {
@@ -27,6 +28,15 @@ namespace AeldreplejeInfrastructure
                 PasswordSalt = passwordSaltUserTwo,
                 PasswordHash = passwordHashUserTwo
             }).Entity;
+            /*var groupDab = ctx.Groups.Add(new Group()
+            {
+                Type = "Dab",
+                Users = new List<User>
+                {
+                    userAdmin,
+                    userNormal
+                }
+            });*/
 
             ctx.SaveChanges();
         }

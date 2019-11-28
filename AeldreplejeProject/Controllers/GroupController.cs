@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AeldreplejeAPI.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class GroupController : Controller
     {
         private IGroupService _groupService;

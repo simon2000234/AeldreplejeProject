@@ -19,6 +19,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 
 namespace AeldreplejeAPI
 {
@@ -74,9 +75,22 @@ namespace AeldreplejeAPI
             });
             services.AddScoped<IUserRepo, UserRepo>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IGroupRepo, GroupRepo>();
+            services.AddScoped<IGroupService, GroupService>();
+            services.AddScoped<IRouteRepo, RouteRepo>();
+            services.AddScoped<IRouteService, RouteService>();
+            services.AddScoped<IShiftRepo, ShiftRepo>();
+            services.AddScoped<IShiftService, ShiftService>();
+            services.AddScoped<IPendingShiftRepo, PendingShiftRepo>();
+            services.AddScoped<IPendingShiftService, PendingShiftService>();
             services.AddSingleton<IAuthenticationHelper>(new AuthenticationHelper(secretBytes));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddCors();
+            services.AddMvc().AddJsonOptions(opt =>
+            {
+                opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                opt.SerializerSettings.MaxDepth = 3;
+            });
 
         }
 

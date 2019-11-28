@@ -39,13 +39,13 @@ namespace AeldreplejeInfrastructure.Repositories
 
         public List<User> GetAllUsers()
         {
-            return _context.Users
+            return _context.Users.Include(u => u.Group)
                                 .ToList(); ;
         }
 
         public User GetUser(int id)
         {
-            return _context.Users.FirstOrDefault(u => u.Id == id);
+            return _context.Users.Include(u => u.Group).FirstOrDefault(u => u.Id == id);
         }
 
         public User UpdateUser(User user)
