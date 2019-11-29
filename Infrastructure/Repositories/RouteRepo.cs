@@ -18,16 +18,21 @@ namespace AeldreplejeInfrastructure.Repositories
         
         public List<Route> GetAllRoute()
         {
-            return _context.Routes.ToList();
+            return _context.Routes.Include(r => r.Shift).ToList();
         }
 
         public Route GetRoute(int id)
         {
-            return _context.Routes.FirstOrDefault(r => r.Id == id);
+            return _context.Routes.Include(r => r.Shift).FirstOrDefault(r => r.Id == id);
         }
 
         public Route CreateRoute(Route route)
         {
+            if (route.Shift != null)
+            {
+                route.Shift = _context.Shifts.FirstOrDefault(s => s.Id == route.Shift.Id);
+                route.Shift.RouteId = route.Id;
+            }
             _context.Attach(route).State = EntityState.Added;
             _context.SaveChanges();
             return route;

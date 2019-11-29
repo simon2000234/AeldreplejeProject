@@ -13,7 +13,6 @@ namespace AeldreplejeCore.Core.Entity
         public int RouteId { get; set; }
         public bool ActiveRoute { get; set; }
         public User User { get; set; }
-        public int PshiftId { get; set; }
         public PendingShift PShift { get; set; }
     }
 }

@@ -23,7 +23,6 @@ namespace AeldreplejeAPI.Controllers
 
         // GET api/users
         [HttpGet]
-        [Authorize]
         public ActionResult<IEnumerable<User>> Get()
         {
             try

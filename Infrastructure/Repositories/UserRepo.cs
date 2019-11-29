@@ -40,7 +40,8 @@ namespace AeldreplejeInfrastructure.Repositories
         public List<User> GetAllUsers()
         {
             return _context.Users.Include(u => u.Group)
-                                .ToList(); ;
+                .Include(u => u.Shifts)
+                .ToList(); ;
         }
 
         public User GetUser(int id)

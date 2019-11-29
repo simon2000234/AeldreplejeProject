@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AeldreplejeInfrastructure.Repositories
 {
-    public class ShiftRepo: IShiftRepo
+    public class ShiftRepo : IShiftRepo
     {
         private AeldrePlejeContext _context;
 
@@ -14,10 +14,10 @@ namespace AeldreplejeInfrastructure.Repositories
         {
             _context = context;
         }
-        
+
         public List<Shift> GetAllShifts()
         {
-            return _context.Shifts.ToList(); 
+            return _context.Shifts.Include(s => s.Route).Include(s => s.User).ToList();
         }
 
         public Shift GetShift(int id)
@@ -27,7 +27,24 @@ namespace AeldreplejeInfrastructure.Repositories
 
         public Shift CreateShift(Shift shift)
         {
+            //Old superior code
+            /*Route route = shift.Route;
+            route.Shift = shift;
+            shift.RouteId = route.Id;
+            _context.Attach(route).State = EntityState.Added;*/
             _context.Attach(shift).State = EntityState.Added;
+            _context.SaveChanges();
+            User user = _context.Users.FirstOrDefault(u => u.Id == shift.User.Id);
+            if (user != null)
+            {
+                user.Shifts.Add(shift);
+                shift.User = user;
+            }
+            Route route = _context.Routes.FirstOrDefault(r => r.Id == shift.Route.Id);
+            shift.Route = route;
+            route.Shift = shift;
+            shift.RouteId = route.Id;
+            _context.Shifts.Attach(shift).State = EntityState.Modified;
             _context.SaveChanges();
             return shift;
         }
@@ -35,6 +52,10 @@ namespace AeldreplejeInfrastructure.Repositories
         public Shift UpdateShift(Shift shift)
         {
             _context.Attach(shift).State = EntityState.Modified;
+            _context.Entry(shift).Reference(s => s.User).IsModified = true;
+            _context.Entry(shift).Reference(s => s.Route).IsModified = true;
+            _context.Entry(shift).Reference(s => s.PShift).IsModified = true;
+
             _context.SaveChanges();
             return shift;
         }
