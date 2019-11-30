@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="59ef8179-9814-4a56-8aa9-61b0a0c275bd" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/AeldreplejeProject/Controllers/RouteController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/RouteService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeProject/Controllers/ShiftController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/IRouteService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IRouteRepo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/RouteRepo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeProject/Controllers/GroupController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IGroupRepo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/GroupRepo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/GroupService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeProject/Controllers/PendingShiftController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/IGroupService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/IPendingShiftService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/PendingShiftService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IPendingShiftRepo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/ShiftRepo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/PendingShiftRepo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/ShiftService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IShiftRepo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/IShiftService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/UserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeProject/Controllers/UsersController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Application/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/Repositories/UserRepo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/AeldrePlejeContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Entity/Shift.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IUserRepo.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IShiftRepo.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Application/IShiftService.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/ShiftService.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeProject/Controllers/ShiftController.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/IGroupService.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IGroupRepo.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Application/IGroupService.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/GroupService.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/AeldrePlejeContext.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repositories/ShiftRepo.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repositories/PendingShift.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Application/IPendingShiftService.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IPendingShiftRepo.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/PendingShiftService.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repositories/GroupRepo.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repositories/PendingShiftRepo.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeProject/Controllers/GroupController.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeProject/Controllers/PendingShiftController.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Application/IRouteService.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Domain/IRouteRepo.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeCore/Core.Application/Impl/RouteService.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure/Repositories/RouteRepo.cs" />
+        <option value="$PROJECT_DIR$/AeldreplejeProject/Controllers/RouteController.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+</project>
