@@ -9,9 +9,10 @@ namespace AeldreplejeCore.Core.Entity
         public string Name { get; set; }
         public string Role { get; set; }
         public string Email { get; set; }
-      //  public Group Group { get; set; }
+        public Group Group { get; set; }
         public string ProfilePicture { get; set; }
-        //public List<Shift> Shifts  { get; set; }
+        public List<Shift> Shifts  { get; set; }
+        public List<UserPendingShift> PShifts { get; set; }
         public bool IsAdmin { get; set; }
         public byte[] PasswordSalt { get; set; }
         public byte[] PasswordHash { get; set; }  

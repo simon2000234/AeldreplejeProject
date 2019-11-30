@@ -16,17 +16,22 @@ namespace AeldreplejeInfrastructure.Repositories
         }
         public List<PendingShift> GetAllPendingShift()
         {
-           return _context.PendingShifts.ToList();
+           return _context.PendingShifts.Include(p=> p.Shift).Include(p=> p.Users).ToList();
         }
 
         public PendingShift GetPendingShift(int id)
         {
-            return _context.PendingShifts.FirstOrDefault(ps => ps.Id == id);
+            return _context.PendingShifts.Include(p => p.Shift).Include(p => p.Users).FirstOrDefault(ps => ps.Id == id);
         }
 
         public PendingShift CreatePendingShift(PendingShift pendingShift)
         {
+            pendingShift.ShiftId = pendingShift.Shift.Id;
             _context.Attach(pendingShift).State = EntityState.Added;
+            _context.SaveChanges();
+            Shift shift = _context.Shifts.FirstOrDefault(s => s.Id == pendingShift.ShiftId);
+            shift.PShift = pendingShift;
+            _context.Attach(pendingShift).State = EntityState.Modified;
             _context.SaveChanges();
             return pendingShift;
         }
