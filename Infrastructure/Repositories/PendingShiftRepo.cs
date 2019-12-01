@@ -16,7 +16,11 @@ namespace AeldreplejeInfrastructure.Repositories
         }
         public List<PendingShift> GetAllPendingShift()
         {
-           return _context.PendingShifts.Include(p=> p.Shift).Include(p=> p.Users).ToList();
+           return _context.PendingShifts
+                .Include(p=> p.Shift)
+                .Include(p=> p.Users)
+                .ThenInclude(u => u.User)
+                .ToList();
         }
 
         public PendingShift GetPendingShift(int id)
@@ -38,7 +42,12 @@ namespace AeldreplejeInfrastructure.Repositories
 
         public PendingShift UpdatePendingShift(PendingShift pendingShift)
         {
+            var newUserList = new List<UserPendingShift>(pendingShift.Users);
             _context.Attach(pendingShift).State = EntityState.Modified;
+            _context.Entry(pendingShift).Reference(ps => ps.Shift).IsModified = true;
+            _context.UserPendingShifts.RemoveRange(
+                _context.UserPendingShifts.Where(ups => ups.PendingShiftId == pendingShift.Id));
+
             _context.SaveChanges();
             return pendingShift;
         }

@@ -28,14 +28,14 @@ namespace AeldreplejeInfrastructure.Repositories
         {
             _context.Attach(group).State = EntityState.Added;
             _context.SaveChanges();
-            for (int i = 0; i < group.Users.Count; i++)
+            /*for (int i = 0; i < group.Users.Count; i++)
             {
                 User user = _context.Users.FirstOrDefault(u => u.Id == group.Users[i].Id);
                 user.Group = group;
                 group.Users[i] = user;
                 _context.Groups.Attach(group).State = EntityState.Modified;
             }
-            _context.SaveChanges();
+            _context.SaveChanges();*/
             return group;
         }
 

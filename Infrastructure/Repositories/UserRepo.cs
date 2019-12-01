@@ -22,6 +22,15 @@ namespace AeldreplejeInfrastructure.Repositories
         {
             _context.Attach(user).State = EntityState.Added;
             _context.SaveChanges();
+
+            Group group = _context.Groups.FirstOrDefault(g => g.Id == user.Group.Id);
+            if (user != null)
+            {
+                group.Users.Add(user);
+                user.Group = group;
+            }
+            _context.SaveChanges();
+
             return user;
         }
 
@@ -39,8 +48,11 @@ namespace AeldreplejeInfrastructure.Repositories
 
         public List<User> GetAllUsers()
         {
-            return _context.Users.Include(u => u.Group)
+            return _context.Users
+                .Include(u => u.Group)
                 .Include(u => u.Shifts)
+                .Include(u => u.PShifts)
+                .ThenInclude(usp => usp.PendingShift)
                 .ToList(); ;
         }
 
@@ -51,7 +63,23 @@ namespace AeldreplejeInfrastructure.Repositories
 
         public User UpdateUser(User user)
         {
+            var newPShiftList = new List<UserPendingShift>(user.PShifts);
             _context.Attach(user).State = EntityState.Modified;
+            _context.Entry(user).Collection(u => u.Shifts).IsModified = true;
+            _context.Entry(user).Reference(u => u.Group).IsModified = true;
+
+            var shifts = _context.Shifts.Where(s => s.User.Id == user.Id && !user.Shifts.Exists(us => us.Id == s.Id));
+
+            foreach (var shift in shifts)
+            {
+                shift.User = null;
+                _context.Entry(shift).Reference(s => s.User).IsModified = true;
+            }
+
+            _context.UserPendingShifts.RemoveRange(
+                _context.UserPendingShifts.Where(usp => usp.UserId == user.Id));
+
+
             _context.SaveChanges();
             return user;
         }
