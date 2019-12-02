@@ -34,12 +34,12 @@ namespace AeldreplejeInfrastructure.Repositories
             _context.Attach(route).State = EntityState.Added;*/
             _context.Attach(shift).State = EntityState.Added;
             _context.SaveChanges();
-            User user = _context.Users.FirstOrDefault(u => u.Id == shift.User.Id);
+            /*User user = _context.Users.FirstOrDefault(u => u.Id == shift.User.Id);
             if (user != null)
             {
                 user.Shifts.Add(shift);
                 shift.User = user;
-            }
+            }*/
             Route route = _context.Routes.FirstOrDefault(r => r.Id == shift.Route.Id);
             shift.Route = route;
             route.Shift = shift;

@@ -18,6 +18,7 @@ namespace AeldreplejeInfrastructure.Repositories
         {
            return _context.PendingShifts
                 .Include(p=> p.Shift)
+                .ThenInclude(s => s.Route)
                 .Include(p=> p.Users)
                 .ThenInclude(u => u.User)
                 .ToList();
