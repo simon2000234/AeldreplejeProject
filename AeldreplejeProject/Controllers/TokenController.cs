@@ -41,6 +41,7 @@ namespace AeldreplejeAPI.Controllers
             return Ok(new
             {
                 username = user.Name,
+                id = user.Id,
                 token = authenticationHelper.GenerateToken(user)
             });
         }
