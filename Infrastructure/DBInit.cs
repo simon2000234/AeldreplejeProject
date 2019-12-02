@@ -17,7 +17,21 @@ namespace AeldreplejeInfrastructure
             var userNormal = ctx.Users.Add(new User()
             {
                 IsAdmin = false,
-                Name = "DabNormal",
+                Name = "Christian",
+                PasswordSalt = passwordSaltUserOne,
+                PasswordHash = passwordHashUserOne
+            }).Entity;
+            var userNormal2 = ctx.Users.Add(new User()
+            {
+                IsAdmin = false,
+                Name = "Richart",
+                PasswordSalt = passwordSaltUserOne,
+                PasswordHash = passwordHashUserOne
+            }).Entity;
+            var userNormal3 = ctx.Users.Add(new User()
+            {
+                IsAdmin = false,
+                Name = "Casper",
                 PasswordSalt = passwordSaltUserOne,
                 PasswordHash = passwordHashUserOne
             }).Entity;
@@ -25,19 +39,75 @@ namespace AeldreplejeInfrastructure
             var userAdmin = ctx.Users.Add(new User()
             {
                 IsAdmin = true,
-                Name = "DabAdmin",
+                Name = "Simon",
                 PasswordSalt = passwordSaltUserTwo,
                 PasswordHash = passwordHashUserTwo
             }).Entity;
-            /*var groupDab = ctx.Groups.Add(new Group()
+            var SSA = ctx.Groups.Add(new Group()
             {
-                Type = "Dab",
+                Type = "SSA",
                 Users = new List<User>
                 {
-                    userAdmin,
-                    userNormal
+                    userNormal,
+                    userNormal2,
+                    userNormal3
                 }
-            });*/
+            }).Entity;
+            var SSH = ctx.Groups.Add(new Group()
+            {
+                Type = "SSH",
+                Users = new List<User>
+                {
+                  userAdmin,
+                }
+            }).Entity;
+            var UDD = ctx.Groups.Add(new Group()
+            {
+                Type = "UDD",
+                Users = new List<User>
+                {
+                    userNormal2
+                }
+            }).Entity;
+
+            var route1 = ctx.Routes.Add(new Route()
+            {
+                Name = "MA01",
+                
+            }).Entity;
+            var route2 = ctx.Routes.Add(new Route()
+            {
+                Name = "MA02",
+                
+            }).Entity;
+            var shift1 = ctx.Shifts.Add(new Shift()
+            {
+                Date = DateTime.Now,
+                Route = route1,
+                User = userNormal,
+                TimeEnd = DateTime.MaxValue,
+                TimeStart = DateTime.Today,
+                ActiveRoute = true,
+                RouteId = route1.Id
+            }).Entity;
+
+            var ps = ctx.PendingShifts.Add(new PendingShift()
+            {
+                Shift = shift1,
+                Users = new List<UserPendingShift>()
+                {
+                    new UserPendingShift()
+                    {
+                        User = userNormal
+                    }
+
+                },
+                ShiftId = shift1.Id
+            }).Entity;
+            
+            
+            
+            
 
             ctx.SaveChanges();
         }
