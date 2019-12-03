@@ -52,7 +52,6 @@ namespace AeldreplejeAPI.Controllers
 
         // GET api/users/5
         [HttpGet("{id}")]
-        [Authorize]
         public ActionResult<User> Get(int id)
         {
             try

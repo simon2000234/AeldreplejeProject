@@ -89,7 +89,7 @@ namespace AeldreplejeAPI
             services.AddMvc().AddJsonOptions(opt =>
             {
                 opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-                opt.SerializerSettings.MaxDepth = 3;
+                opt.SerializerSettings.MaxDepth = 10;
             });
 
         }
