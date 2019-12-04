@@ -19,7 +19,9 @@ namespace AeldreplejeInfrastructure
                 IsAdmin = false,
                 Name = "Christian",
                 PasswordSalt = passwordSaltUserOne,
-                PasswordHash = passwordHashUserOne
+                PasswordHash = passwordHashUserOne,
+                Email = "christiansEmail@email.com",
+                ProfilePicture = "https://scontent-ams4-1.xx.fbcdn.net/v/t1.0-9/68397042_2373050946108579_1355476049231609856_n.jpg?_nc_cat=111&_nc_ohc=L-VxFCgmIOEAQkExKADS7GkFanYn-wlS1DtritGMIDMaz-F2F47jDBqdg&_nc_ht=scontent-ams4-1.xx&oh=d64bb5c81845f4af32142583c4d47f87&oe=5E89A221"
             }).Entity;
             var userNormal2 = ctx.Users.Add(new User()
             {
