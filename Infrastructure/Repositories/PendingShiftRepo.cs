@@ -26,7 +26,11 @@ namespace AeldreplejeInfrastructure.Repositories
 
         public PendingShift GetPendingShift(int id)
         {
-            return _context.PendingShifts.Include(p => p.Shift).Include(p => p.Users).FirstOrDefault(ps => ps.Id == id);
+            return _context.PendingShifts
+                .Include(p => p.Shift)
+                .ThenInclude(s => s.Route)
+                .Include(p => p.Users)
+                .FirstOrDefault(ps => ps.Id == id);
         }
 
         public PendingShift CreatePendingShift(PendingShift pendingShift)
