@@ -58,7 +58,10 @@ namespace AeldreplejeInfrastructure.Repositories
 
         public User GetUser(int id)
         {
-            return _context.Users.Include(u => u.Group).FirstOrDefault(u => u.Id == id);
+            return _context.Users.Include(u => u.Group)
+                .Include(u => u.Shifts)
+                .Include(u => u.PShifts)
+                .ThenInclude(usp => usp.PendingShift).FirstOrDefault(u => u.Id == id);
         }
 
         public User UpdateUser(User user)
