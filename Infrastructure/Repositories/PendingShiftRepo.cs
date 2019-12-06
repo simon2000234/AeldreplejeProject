@@ -59,6 +59,8 @@ namespace AeldreplejeInfrastructure.Repositories
 
         public PendingShift DeletePendingShift(int id)
         {
+            _context.UserPendingShifts.RemoveRange(
+                _context.UserPendingShifts.Where(ups => ups.PendingShiftId == id));
             var pendingShift = _context.Remove(new PendingShift { Id = id }).Entity;
             _context.SaveChanges();
             return pendingShift;
