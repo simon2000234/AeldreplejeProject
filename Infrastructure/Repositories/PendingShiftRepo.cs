@@ -20,7 +20,8 @@ namespace AeldreplejeInfrastructure.Repositories
                 .Include(p=> p.Shift)
                 .ThenInclude(s => s.Route)
                 .Include(p=> p.Users)
-                .ThenInclude(u => u.User)
+                .ThenInclude(usp => usp.User)
+                .ThenInclude(u => u.Shifts)
                 .ToList();
         }
 
@@ -31,6 +32,7 @@ namespace AeldreplejeInfrastructure.Repositories
                 .ThenInclude(s => s.Route)
                 .Include(p => p.Users)
                 .ThenInclude(ups => ups.User)
+                .ThenInclude(u => u.Shifts)
                 .FirstOrDefault(ps => ps.Id == id);
         }
 
