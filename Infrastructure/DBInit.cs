@@ -44,7 +44,7 @@ namespace AeldreplejeInfrastructure
             {
                 IsAdmin = true,
                 Name = "Simon",
-                ProfilePicture = "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwj9lrXEl6jmAhWvxIsKHdt1BwEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.elitedaily.com%2Fentertainment%2Fhow-joffrey-died-game-of-thrones%2F2030827&psig=AOvVaw0HlPTFX0F8uGEeAo9EH1EC&ust=1575967745670752",
+                ProfilePicture = "https://imgix.bustle.com/elite-daily/2017/07/28103007/joffrey-game-of-thrones-choking.jpg?w=1020&h=574&fit=crop&crop=faces&auto=format&q=70",
                 PasswordSalt = passwordSaltUserTwo,
                 PasswordHash = passwordHashUserTwo
             }).Entity;
