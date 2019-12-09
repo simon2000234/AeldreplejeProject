@@ -27,6 +27,7 @@ namespace AeldreplejeInfrastructure
             {
                 IsAdmin = false,
                 Name = "Richart",
+                ProfilePicture = "https://scontent-ams4-1.xx.fbcdn.net/v/t1.0-9/13906839_10206396239896911_6785032534256698008_n.jpg?_nc_cat=100&_nc_ohc=NWUTbJTLB7oAQkf5171xXvT0S_v4pdlAB1wHR_kbXfXiZXd0kzXCiLjuA&_nc_ht=scontent-ams4-1.xx&oh=d38d30e968f89eff9eb1fe39ee3287c3&oe=5E68167D",
                 PasswordSalt = passwordSaltUserOne,
                 PasswordHash = passwordHashUserOne
             }).Entity;
@@ -34,7 +35,8 @@ namespace AeldreplejeInfrastructure
             {
                 IsAdmin = false,
                 Name = "Casper",
-                PasswordSalt = passwordSaltUserOne,
+                ProfilePicture =  "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiF66ifl6jmAhWilYsKHZPhDI4QjRx6BAgBEAQ&url=https%3A%2F%2Fwww.facebook.com%2Fvikings.ragnar.lothbrok%2F&psig=AOvVaw1ZbG9cge6eyGyZpAjyemRO&ust=1575967645404763"
+                ,PasswordSalt = passwordSaltUserOne,
                 PasswordHash = passwordHashUserOne
             }).Entity;
 
@@ -42,6 +44,7 @@ namespace AeldreplejeInfrastructure
             {
                 IsAdmin = true,
                 Name = "Simon",
+                ProfilePicture = "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwj9lrXEl6jmAhWvxIsKHdt1BwEQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.elitedaily.com%2Fentertainment%2Fhow-joffrey-died-game-of-thrones%2F2030827&psig=AOvVaw0HlPTFX0F8uGEeAo9EH1EC&ust=1575967745670752",
                 PasswordSalt = passwordSaltUserTwo,
                 PasswordHash = passwordHashUserTwo
             }).Entity;
