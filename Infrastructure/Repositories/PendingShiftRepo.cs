@@ -30,6 +30,7 @@ namespace AeldreplejeInfrastructure.Repositories
                 .Include(p => p.Shift)
                 .ThenInclude(s => s.Route)
                 .Include(p => p.Users)
+                .ThenInclude(ups => ups.User)
                 .FirstOrDefault(ps => ps.Id == id);
         }
 
