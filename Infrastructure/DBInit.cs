@@ -35,7 +35,7 @@ namespace AeldreplejeInfrastructure
             {
                 IsAdmin = false,
                 Name = "Casper",
-                ProfilePicture =  "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiF66ifl6jmAhWilYsKHZPhDI4QjRx6BAgBEAQ&url=https%3A%2F%2Fwww.facebook.com%2Fvikings.ragnar.lothbrok%2F&psig=AOvVaw1ZbG9cge6eyGyZpAjyemRO&ust=1575967645404763"
+                ProfilePicture =  "https://scontent-ams4-1.xx.fbcdn.net/v/t1.0-9/12524001_1549641258661056_8462488784370177517_n.png?_nc_cat=109&_nc_ohc=_uulefV7bhEAQmqusa2XXfvuZdh72xF92JjafAdGC2NjGXJZ0RGgy2z2w&_nc_ht=scontent-ams4-1.xx&oh=1c4928765d11ea4940a2a00321425a65&oe=5E6815A3"
                 ,PasswordSalt = passwordSaltUserOne,
                 PasswordHash = passwordHashUserOne
             }).Entity;
