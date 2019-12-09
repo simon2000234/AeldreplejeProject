@@ -22,7 +22,10 @@ namespace AeldreplejeInfrastructure.Repositories
 
         public Shift GetShift(int id)
         {
-            return _context.Shifts.FirstOrDefault(s => s.Id == id);
+            return _context.Shifts
+                .Include(s => s.User)
+                .Include(s => s.Route)
+                .FirstOrDefault(s => s.Id == id);
         }
 
         public Shift CreateShift(Shift shift)
