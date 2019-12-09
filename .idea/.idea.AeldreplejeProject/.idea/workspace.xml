@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59ef8179-9814-4a56-8aa9-61b0a0c275bd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AeldreplejeProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AeldreplejeProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DBInit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DBInit.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -140,7 +140,7 @@
       <option name="presentableId" value="Default" />
       <updated>1575878527379</updated>
       <workItem from="1575878534607" duration="741000" />
-      <workItem from="1575879763961" duration="2457000" />
+      <workItem from="1575879763961" duration="3221000" />
     </task>
     <servers />
   </component>
