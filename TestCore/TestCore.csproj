@@ -18,4 +18,8 @@
     <ProjectReference Include="..\AeldreplejeCore\AeldreplejeCore.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Core.Application\Impl\" />
+  </ItemGroup>
+
 </Project>
