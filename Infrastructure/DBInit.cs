@@ -27,7 +27,7 @@ namespace AeldreplejeInfrastructure
             {
                 IsAdmin = false,
                 Name = "Richart",
-                Email = "richart@email.com"
+                Email = "richart@email.com",
                 ProfilePicture = "https://scontent-ams4-1.xx.fbcdn.net/v/t1.0-9/13906839_10206396239896911_6785032534256698008_n.jpg?_nc_cat=100&_nc_ohc=NWUTbJTLB7oAQkf5171xXvT0S_v4pdlAB1wHR_kbXfXiZXd0kzXCiLjuA&_nc_ht=scontent-ams4-1.xx&oh=d38d30e968f89eff9eb1fe39ee3287c3&oe=5E68167D",
                 PasswordSalt = passwordSaltUserOne,
                 PasswordHash = passwordHashUserOne
@@ -36,7 +36,7 @@ namespace AeldreplejeInfrastructure
             {
                 IsAdmin = false,
                 Name = "Casper",
-                Email = "casper@email.com"
+                Email = "casper@email.com",
                 ProfilePicture =  "https://scontent-ams4-1.xx.fbcdn.net/v/t1.0-9/12524001_1549641258661056_8462488784370177517_n.png?_nc_cat=109&_nc_ohc=_uulefV7bhEAQmqusa2XXfvuZdh72xF92JjafAdGC2NjGXJZ0RGgy2z2w&_nc_ht=scontent-ams4-1.xx&oh=1c4928765d11ea4940a2a00321425a65&oe=5E6815A3"
                 ,PasswordSalt = passwordSaltUserOne,
                 PasswordHash = passwordHashUserOne
@@ -46,7 +46,7 @@ namespace AeldreplejeInfrastructure
             {
                 IsAdmin = true,
                 Name = "Simon",
-                Email = "simon@email.com"
+                Email = "simon@email.com",
                 ProfilePicture = "https://imgix.bustle.com/elite-daily/2017/07/28103007/joffrey-game-of-thrones-choking.jpg?w=1020&h=574&fit=crop&crop=faces&auto=format&q=70",
                 PasswordSalt = passwordSaltUserTwo,
                 PasswordHash = passwordHashUserTwo
