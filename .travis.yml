@@ -6,6 +6,7 @@ solution: AeldreplejeProject.sln
 script:
  - dotnet restore
  - dotnet build
+ - dotnet test TestCore/TestCore.csproj
  
  # safelist
 branches:
