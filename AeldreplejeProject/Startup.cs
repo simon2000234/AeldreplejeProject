@@ -83,6 +83,12 @@ namespace AeldreplejeAPI
             services.AddScoped<IShiftService, ShiftService>();
             services.AddScoped<IPendingShiftRepo, PendingShiftRepo>();
             services.AddScoped<IPendingShiftService, PendingShiftService>();
+            services.AddScoped<IActiveRouteRepo, ActiveRouteRepo>();
+            services.AddScoped<IActiveRouteService, ActiveRouteService>();
+            services.AddScoped<ITimeStartRepo, TimeStartRepo>();
+            services.AddScoped<ITimeStartService, TimeStartService>();
+            services.AddScoped<ITimeEndRepo, TimeEndRepo>();
+            services.AddScoped<ITimeEndService, TimeEndService>();
             services.AddSingleton<IAuthenticationHelper>(new AuthenticationHelper(secretBytes));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddCors();

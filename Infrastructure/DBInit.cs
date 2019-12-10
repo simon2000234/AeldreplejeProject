@@ -112,10 +112,49 @@ namespace AeldreplejeInfrastructure
                 },
                 ShiftId = shift1.Id
             }).Entity;
-            
-            
-            
-            
+
+            var ar = ctx.ActiveRoutes.Add(new ActiveRoute()
+            {
+                Name = "MA01"
+            }).Entity;
+            var ar2 = ctx.ActiveRoutes.Add(new ActiveRoute()
+            {
+                Name = "MA02"
+            }).Entity;
+            var ar3 = ctx.ActiveRoutes.Add(new ActiveRoute()
+            {
+                Name = "MA03"
+            }).Entity;
+            var ar4 = ctx.ActiveRoutes.Add(new ActiveRoute()
+            {
+                Name = "MA10"
+            }).Entity;
+
+            var ts = ctx.TimeStarts.Add(new TimeStart()
+            {
+                timeStart = "15:00"
+            }).Entity;
+            var ts2 = ctx.TimeStarts.Add(new TimeStart()
+            {
+                timeStart = "15:30"
+            }).Entity;
+            var ts3 = ctx.TimeStarts.Add(new TimeStart()
+            {
+                timeStart = "16:00"
+            }).Entity;
+            var ts4 = ctx.TimeStarts.Add(new TimeStart()
+            {
+                timeStart = "16:30"
+            }).Entity;
+
+            var te = ctx.TimeEnds.Add(new TimeEnd()
+            {
+                timeEnd = "23:00"
+            }).Entity;
+
+
+
+
 
             ctx.SaveChanges();
         }
