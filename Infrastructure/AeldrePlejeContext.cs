@@ -19,6 +19,9 @@ namespace AeldreplejeInfrastructure
             modelBuilder.Entity<Group>().HasKey(g => g.Id);
             modelBuilder.Entity<Shift>().HasKey(s => s.Id);
             modelBuilder.Entity<Route>().HasKey(r => r.Id);
+            modelBuilder.Entity<ActiveRoute>().HasKey(ar => ar.id);
+            modelBuilder.Entity<TimeStart>().HasKey(ts => ts.id);
+            modelBuilder.Entity<TimeEnd>().HasKey(te => te.id);
             modelBuilder.Entity<PendingShift>().HasKey(p => p.Id);
             modelBuilder.Entity<UserPendingShift>().HasKey(up => new {up.PendingShiftId, up.UserId});
             modelBuilder.Entity<User>().HasOne(u => u.Group)
@@ -46,6 +49,11 @@ namespace AeldreplejeInfrastructure
         public DbSet<Route> Routes { get; set; }
         public DbSet<PendingShift> PendingShifts { get; set; }
         public DbSet<UserPendingShift> UserPendingShifts { get; set; }
+        public DbSet<ActiveRoute> ActiveRoutes { get; set; }
+        public DbSet<TimeStart> TimeStarts { get; set; }
+        public DbSet<TimeEnd> TimeEnds { get; set; }
+
+
 
     }
 }
