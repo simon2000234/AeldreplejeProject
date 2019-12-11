@@ -207,7 +207,7 @@ namespace TestCore.Core.Application.Impl
         }
 
         /*[Fact]
-        public void CreateCustomerWithTypeTheTypeShouldExistThrowsException()
+        public void CreateUserWithGroupTheGroupShouldExistThrowsException()
         {
             var group = new Group()
             {
@@ -218,8 +218,6 @@ namespace TestCore.Core.Application.Impl
             var userRepo = new Mock<IUserRepo>();
 
             var service = new UserService(userRepo.Object);
-
-
 
             var user = new User()
             {
@@ -238,7 +236,201 @@ namespace TestCore.Core.Application.Impl
 
         }*/
 
+        [Fact]
+        public void UpdateNullUserThrowsException()
+        {
+            var userRepo = new Mock<IUserRepo>();
 
+            var service = new UserService(userRepo.Object);
 
+            Exception ex = Assert.Throws<InvalidDataException>(() =>
+                service.UpdateUser(null));
+            Assert.Equal("User most not be null", ex.Message);
+
+        }
+
+        [Fact]
+        public void UpdateUserWithEmptyNameThrowsException()
+        {
+            var userRepo = new Mock<IUserRepo>();
+
+            var service = new UserService(userRepo.Object);
+
+            var user = new User()
+            {
+                Name = "",
+                Email = "Email@email.com",
+                Id = 1,
+                IsAdmin = true,
+                Role = "Normal",
+                ProfilePicture = "whatthefuck.jpg"
+            };
+
+            Exception ex = Assert.Throws<InvalidDataException>(() =>
+                service.UpdateUser(user));
+            Assert.Equal("User must have a name", ex.Message);
+
+        }
+        [Fact]
+        public void UpdateUserWithNullNameThrowsException()
+        {
+            var userRepo = new Mock<IUserRepo>();
+
+            var service = new UserService(userRepo.Object);
+
+            var user = new User()
+            {
+                Name = null,
+                Email = "Email@email.com",
+                Id = 1,
+                IsAdmin = true,
+                Role = "Normal",
+                ProfilePicture = "whatthefuck.jpg"
+            };
+
+            Exception ex = Assert.Throws<InvalidDataException>(() =>
+                service.UpdateUser(user));
+            Assert.Equal("User must have a name", ex.Message);
+
+        }
+
+        [Fact]
+        public void UpdateUserWithNullEmailThrowsException()
+        {
+            var userRepo = new Mock<IUserRepo>();
+
+            var service = new UserService(userRepo.Object);
+
+            var user = new User()
+            {
+                Name = "Dabdab",
+                Email = null,
+                Id = 1,
+                IsAdmin = true,
+                Role = "Normal",
+                ProfilePicture = "whatthefuck.jpg"
+            };
+
+            Exception ex = Assert.Throws<InvalidDataException>(() =>
+                service.UpdateUser(user));
+            Assert.Equal("User must have an Email", ex.Message);
+
+        }
+
+        [Fact]
+        public void UpdateUserWithEmptyEmailThrowsException()
+        {
+            var userRepo = new Mock<IUserRepo>();
+
+            var service = new UserService(userRepo.Object);
+
+            var user = new User()
+            {
+                Name = "Dabdab",
+                Email = "",
+                Id = 1,
+                IsAdmin = true,
+                Role = "Normal",
+                ProfilePicture = "whatthefuck.jpg"
+            };
+
+            Exception ex = Assert.Throws<InvalidDataException>(() =>
+                service.UpdateUser(user));
+            Assert.Equal("User must have an Email", ex.Message);
+
+        }
+
+        [Fact]
+        public void UpdateUserWithNoAddInEmailThrowsException()
+        {
+            var userRepo = new Mock<IUserRepo>();
+
+            var service = new UserService(userRepo.Object);
+
+            var user = new User()
+            {
+                Name = "Dabdab",
+                Email = "Emailemail.com",
+                Id = 1,
+                IsAdmin = true,
+                Role = "Normal",
+                ProfilePicture = "whatthefuck.jpg"
+            };
+
+            Exception ex = Assert.Throws<InvalidDataException>(() =>
+                service.UpdateUser(user));
+            Assert.Equal("User must have an @ in the Email", ex.Message);
+
+        }
+
+        [Fact]
+        public void UpdateUserWithNoDotInEmailThrowsException()
+        {
+            var userRepo = new Mock<IUserRepo>();
+
+            var service = new UserService(userRepo.Object);
+
+            var user = new User()
+            {
+                Name = "Dabdab",
+                Email = "Email@emailcom",
+                Id = 1,
+                IsAdmin = true,
+                Role = "Normal",
+                ProfilePicture = "whatthefuck.jpg"
+            };
+
+            Exception ex = Assert.Throws<InvalidDataException>(() =>
+                service.UpdateUser(user));
+            Assert.Equal("User must end with .something in the Email", ex.Message);
+
+        }
+
+        [Fact]
+        public void UpdateUserWithMultipleAddsInTheirEmailThrowsException()
+        {
+            var userRepo = new Mock<IUserRepo>();
+
+            var service = new UserService(userRepo.Object);
+
+            var user = new User()
+            {
+                Name = "Dabdab",
+                Email = "E@mail@email.com",
+                Id = 1,
+                IsAdmin = true,
+                Role = "Normal",
+                ProfilePicture = "whatthefuck.jpg"
+            };
+
+            Exception ex = Assert.Throws<InvalidDataException>(() =>
+                service.UpdateUser(user));
+            Assert.Equal("User's email may only have one @ in them", ex.Message);
+
+        }
+
+        [Fact]
+        public void UpdateUserWithNullGroupThrowsException()
+        {
+            var userRepo = new Mock<IUserRepo>();
+
+            var service = new UserService(userRepo.Object);
+
+            var user = new User()
+            {
+                Name = "Dabdab",
+                Email = "Email@email.com",
+                Id = 1,
+                IsAdmin = true,
+                Role = "Normal",
+                ProfilePicture = "whatthefuck.jpg",
+                Group = null
+            };
+
+            Exception ex = Assert.Throws<InvalidDataException>(() =>
+                service.UpdateUser(user));
+            Assert.Equal("User must have a group", ex.Message);
+
+        }
     }
 }
