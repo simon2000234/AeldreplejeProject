@@ -40,6 +40,7 @@ namespace AeldreplejeCore.Core.Application.Impl
 
         public User UpdateUser(User user)
         {
+            UserServiceValidator.ValidateUser(user);
             return _userRepository.UpdateUser(user);
         }
     }

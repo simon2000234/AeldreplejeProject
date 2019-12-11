@@ -12,6 +12,7 @@ namespace AeldreplejeCore.Core.Application.Impl
         {
             _groupepository = groupRepository;
         }
+
         public List<Group> GetAllGroups()
         {
             return _groupepository.GetAllGroups();

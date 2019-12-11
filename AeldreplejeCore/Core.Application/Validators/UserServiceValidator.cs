@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using AeldreplejeCore.Core.Application.Impl;
 using AeldreplejeCore.Core.Entity;
 
 namespace AeldreplejeCore.Core.Application.Validators
