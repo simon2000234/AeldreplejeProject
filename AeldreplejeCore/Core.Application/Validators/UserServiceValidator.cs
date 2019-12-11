@@ -48,6 +48,16 @@ namespace AeldreplejeCore.Core.Application.Validators
             }
         }
 
+        public static void ValidateUpdateUser(User user)
+        {
+            ValidateUser(user);
+            if (user.Id < 1)
+            {
+                throw new InvalidDataException("User must have a valid positive id to update");
+            }
+        }
+
+
         private static bool containMultipleAdds(string email)
         {
             char[] lettersInEmail = email.ToCharArray();

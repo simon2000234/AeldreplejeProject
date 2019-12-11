@@ -410,8 +410,38 @@ namespace TestCore.Core.Application.Impl
         }
 
         [Fact]
+        public void UpdateUserWithNegativeOrZeroIdThrowsException()
+        {
+            var group = new Group()
+            {
+                Id = 1,
+                Type = "VinVin"
+            };
+
+            var userRepo = new Mock<IUserRepo>();
+
+            var service = new UserService(userRepo.Object);
+
+            var user = new User()
+            {
+                Name = "Dabdab",
+                Email = "Email@email.com",
+                Id = -1,
+                IsAdmin = true,
+                Role = "Normal",
+                ProfilePicture = "whatthefuck.jpg",
+                Group = group
+            };
+
+            Exception ex = Assert.Throws<InvalidDataException>(() =>
+                service.UpdateUser(user));
+            Assert.Equal("User must have a valid positive id to update", ex.Message);
+        }
+
+        [Fact]
         public void UpdateUserWithNullGroupThrowsException()
         {
+
             var userRepo = new Mock<IUserRepo>();
 
             var service = new UserService(userRepo.Object);

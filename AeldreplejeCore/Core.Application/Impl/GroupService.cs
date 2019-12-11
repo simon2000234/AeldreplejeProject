@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using AeldreplejeCore.Core.Application.Validators;
 using AeldreplejeCore.Core.Domain;
 using AeldreplejeCore.Core.Entity;
 
@@ -25,11 +26,13 @@ namespace AeldreplejeCore.Core.Application.Impl
 
         public Group CreateGroup(Group group)
         {
+            GroupServiceValidator.ValidateGroup(group);
             return _groupepository.CreateGroup(group);
         }
 
         public Group UpdateGroup(Group group)
         {
+            GroupServiceValidator.ValidateUpdateGroup(group);
             return _groupepository.UpdateGroup(group);
         }
 

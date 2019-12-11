@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using AeldreplejeCore.Core.Application.Validators;
 using AeldreplejeCore.Core.Domain;
 using AeldreplejeCore.Core.Entity;
 
@@ -25,11 +26,13 @@ namespace AeldreplejeCore.Core.Application.Impl
 
         public Route CreateRoute(Route route)
         {
+            RouteServiceValidator.ValidateRoute(route);
             return _routeRepo.CreateRoute(route);
         }
 
         public Route UpdateRoute(Route route)
         {
+            RouteServiceValidator.ValidateUpdateRoute(route);
             return _routeRepo.UpdateRoute(route);
         }
 

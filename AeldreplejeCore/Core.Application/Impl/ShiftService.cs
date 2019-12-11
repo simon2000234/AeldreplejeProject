@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using AeldreplejeCore.Core.Application.Validators;
 using AeldreplejeCore.Core.Domain;
 using AeldreplejeCore.Core.Entity;
 
@@ -25,11 +26,13 @@ namespace AeldreplejeCore.Core.Application.Impl
 
         public Shift CreateShift(Shift shift)
         {
+            ShiftServiceValidator.ValidateShift(shift);
             return _shiftRepository.CreateShift(shift);
         }
 
         public Shift UpdateShift(Shift shift)
         {
+            ShiftServiceValidator.ValidateUpdateShift(shift);
             return _shiftRepository.UpdateShift(shift);
         }
 
