@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using AeldreplejeCore.Core.Application.Validators;
 using AeldreplejeCore.Core.Domain;
 using AeldreplejeCore.Core.Entity;
 
@@ -17,6 +19,7 @@ namespace AeldreplejeCore.Core.Application.Impl
 
         public User CreateUser(User user)
         {
+            UserServiceValidator.ValidateUser(user);
             return _userRepository.CreateUser(user);
         }
 
@@ -37,6 +40,7 @@ namespace AeldreplejeCore.Core.Application.Impl
 
         public User UpdateUser(User user)
         {
+            UserServiceValidator.ValidateUser(user);
             return _userRepository.UpdateUser(user);
         }
     }
