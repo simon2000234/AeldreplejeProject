@@ -11,15 +11,21 @@ namespace AeldreplejeCore.Core.Application.Impl
     public class UserService : IUserService
     {
         private IUserRepo _userRepository;
+        private IGroupRepo _groupRepo;
 
-        public UserService(IUserRepo userRepository)
+        public UserService(IUserRepo userRepository, IGroupRepo groupRepo = null)
         {
             _userRepository = userRepository;
+            _groupRepo = groupRepo;
         }
 
         public User CreateUser(User user)
         {
             UserServiceValidator.ValidateUser(user);
+            if (_groupRepo.GetGroup(user.Group.Id) == null)
+            {
+                throw new InvalidDataException("User most have a group that already exists");
+            }
             return _userRepository.CreateUser(user);
         }
 

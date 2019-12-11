@@ -206,7 +206,7 @@ namespace TestCore.Core.Application.Impl
 
         }
 
-        /*[Fact]
+        [Fact]
         public void CreateUserWithGroupTheGroupShouldExistThrowsException()
         {
             var group = new Group()
@@ -216,8 +216,9 @@ namespace TestCore.Core.Application.Impl
             };
 
             var userRepo = new Mock<IUserRepo>();
+            var groupRepo = new Mock<IGroupRepo>();
 
-            var service = new UserService(userRepo.Object);
+            var service = new UserService(userRepo.Object, groupRepo.Object);
 
             var user = new User()
             {
@@ -231,10 +232,8 @@ namespace TestCore.Core.Application.Impl
             };
             Exception ex = Assert.Throws<InvalidDataException>(() =>
                 service.CreateUser(user));
-            //orderRepo.Verify(x => x.Create(It.IsAny<Order>()), Times.Once);
-            Assert.Equal(1, 2);
-
-        }*/
+            Assert.Equal("User most have a group that already exists", ex.Message);
+        }
 
         [Fact]
         public void UpdateNullUserThrowsException()
