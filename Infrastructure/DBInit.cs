@@ -27,7 +27,7 @@ namespace AeldreplejeInfrastructure
             {
                 IsAdmin = false,
                 Name = "Richart",
-                Email = "richart@email.com"
+                Email = "richart@email.com",
                 ProfilePicture = "https://scontent-ams4-1.xx.fbcdn.net/v/t1.0-9/13906839_10206396239896911_6785032534256698008_n.jpg?_nc_cat=100&_nc_ohc=NWUTbJTLB7oAQkf5171xXvT0S_v4pdlAB1wHR_kbXfXiZXd0kzXCiLjuA&_nc_ht=scontent-ams4-1.xx&oh=d38d30e968f89eff9eb1fe39ee3287c3&oe=5E68167D",
                 PasswordSalt = passwordSaltUserOne,
                 PasswordHash = passwordHashUserOne
@@ -36,7 +36,7 @@ namespace AeldreplejeInfrastructure
             {
                 IsAdmin = false,
                 Name = "Casper",
-                Email = "casper@email.com"
+                Email = "casper@email.com",
                 ProfilePicture =  "https://scontent-ams4-1.xx.fbcdn.net/v/t1.0-9/12524001_1549641258661056_8462488784370177517_n.png?_nc_cat=109&_nc_ohc=_uulefV7bhEAQmqusa2XXfvuZdh72xF92JjafAdGC2NjGXJZ0RGgy2z2w&_nc_ht=scontent-ams4-1.xx&oh=1c4928765d11ea4940a2a00321425a65&oe=5E6815A3"
                 ,PasswordSalt = passwordSaltUserOne,
                 PasswordHash = passwordHashUserOne
@@ -46,7 +46,7 @@ namespace AeldreplejeInfrastructure
             {
                 IsAdmin = true,
                 Name = "Simon",
-                Email = "simon@email.com"
+                Email = "simon@email.com",
                 ProfilePicture = "https://imgix.bustle.com/elite-daily/2017/07/28103007/joffrey-game-of-thrones-choking.jpg?w=1020&h=574&fit=crop&crop=faces&auto=format&q=70",
                 PasswordSalt = passwordSaltUserTwo,
                 PasswordHash = passwordHashUserTwo
@@ -54,16 +54,17 @@ namespace AeldreplejeInfrastructure
             var SSA = ctx.Groups.Add(new Group()
             {
                 Type = "SSA",
+                QualificationNumber = 3, 
                 Users = new List<User>
                 {
                     userNormal,
-                    userNormal2,
                     userNormal3
                 }
             }).Entity;
             var SSH = ctx.Groups.Add(new Group()
             {
                 Type = "SSH",
+                QualificationNumber = 2, 
                 Users = new List<User>
                 {
                   userAdmin,
@@ -72,6 +73,7 @@ namespace AeldreplejeInfrastructure
             var UDD = ctx.Groups.Add(new Group()
             {
                 Type = "UDD",
+                QualificationNumber = 1,
                 Users = new List<User>
                 {
                     userNormal2
@@ -92,11 +94,25 @@ namespace AeldreplejeInfrastructure
             {
                 Date = DateTime.Now,
                 Route = route1,
+                ShiftQualificationNumber = 1,
                 User = userNormal,
                 TimeEnd = DateTime.MaxValue,
                 TimeStart = DateTime.Today,
                 ActiveRoute = true,
                 RouteId = route1.Id
+                
+            }).Entity;
+            
+            var shift2 = ctx.Shifts.Add(new Shift()
+            {
+                Date = DateTime.Now,
+                Route = route2,
+                ShiftQualificationNumber = 2,
+                TimeEnd = DateTime.MaxValue,
+                TimeStart = DateTime.Today,
+                ActiveRoute = true,
+                RouteId = route2.Id
+                
             }).Entity;
 
             var ps = ctx.PendingShifts.Add(new PendingShift()
@@ -113,6 +129,14 @@ namespace AeldreplejeInfrastructure
                 ShiftId = shift1.Id
             }).Entity;
             
+            var pps = ctx.PendingShifts.Add(new PendingShift()
+            {
+                Shift = shift2,
+                
+                
+                ShiftId = shift2.Id
+            }).Entity;
+            
             
             
             
@@ -120,6 +144,7 @@ namespace AeldreplejeInfrastructure
             ctx.SaveChanges();
         }
 
+        
         private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512())
