@@ -17,7 +17,7 @@ namespace AeldreplejeCore.Core.Application.Impl
             _userRepository = userRepository;
         }
 
-        public User CreateUser(User user)
+        public User CreateUser(UserDTO user)
         {
             UserServiceValidator.ValidateUser(user);
             return _userRepository.CreateUser(user);
@@ -38,7 +38,7 @@ namespace AeldreplejeCore.Core.Application.Impl
             return _userRepository.GetUser(id);
         }
 
-        public User UpdateUser(User user)
+        public User UpdateUser(UserDTO user)
         {
             UserServiceValidator.ValidateUpdateUser(user);
             return _userRepository.UpdateUser(user);

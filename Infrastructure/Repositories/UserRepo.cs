@@ -5,21 +5,40 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-
+using AeldreplejeInfrastructure.Helpers;
 
 namespace AeldreplejeInfrastructure.Repositories
 {
     public class UserRepo : IUserRepo
     {
         private AeldrePlejeContext _context;
+        private IAuthenticationHelper _auth;
 
-        public UserRepo(AeldrePlejeContext context)
+        public UserRepo(AeldrePlejeContext context, IAuthenticationHelper authentication)
         {
             _context = context;
+            _auth = authentication;
         }
 
-        public User CreateUser(User user)
+        public User CreateUser(UserDTO userDTO)
         {
+
+            byte[] newPassHash, newPassSalt;
+            _auth.CreatePasswordHash(userDTO.Password, out newPassHash, out newPassSalt);
+            User user = new User
+            {
+                Name = userDTO.Name,
+                Email = userDTO.Email,
+                IsAdmin = userDTO.IsAdmin,
+                Group = userDTO.Group,
+                ProfilePicture = userDTO.ProfilePicture,
+                PasswordHash = newPassHash,
+                PasswordSalt = newPassSalt,
+                PShifts = userDTO.PShifts,
+                Role = userDTO.Role,
+                Shifts = userDTO.Shifts
+            };
+
             _context.Attach(user).State = EntityState.Added;
             _context.SaveChanges();
 
@@ -64,9 +83,28 @@ namespace AeldreplejeInfrastructure.Repositories
                 .ThenInclude(usp => usp.PendingShift).FirstOrDefault(u => u.Id == id);
         }
 
-        public User UpdateUser(User user)
+        public User UpdateUser(UserDTO userDTO)
         {
-            if(user.PShifts != null)
+
+            byte[] newPassHash, newPassSalt;
+            _auth.CreatePasswordHash(userDTO.Password, out newPassHash, out newPassSalt);
+            User user = new User
+            {
+                Id = userDTO.Id,
+                Name = userDTO.Name,
+                Email = userDTO.Email,
+                IsAdmin = userDTO.IsAdmin,
+                PasswordHash = newPassHash,
+                PasswordSalt = newPassSalt,
+                Group = userDTO.Group,
+                ProfilePicture = userDTO.ProfilePicture,
+                PShifts = userDTO.PShifts,
+                Role = userDTO.Role,
+                Shifts = userDTO.Shifts
+            };
+            
+
+            if (user.PShifts != null)
             {
                 var newPShiftList = new List<UserPendingShift>(user.PShifts);
             }

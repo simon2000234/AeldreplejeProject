@@ -38,7 +38,7 @@ namespace AeldreplejeAPI.Controllers
         // POST api/users
         [HttpPost]
         [Authorize(Roles = "Administrator")]
-        public ActionResult<User> Post([FromBody] User user)
+        public ActionResult<User> Post([FromBody] UserDTO user)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace AeldreplejeAPI.Controllers
         // PUT api/users/5
         [HttpPut("{id}")]
         [Authorize(Roles = "Administrator")]
-        public ActionResult<User> Put(int id, [FromBody] User user)
+        public ActionResult<User> Put(int id, [FromBody] UserDTO user)
         {
             try
             {
