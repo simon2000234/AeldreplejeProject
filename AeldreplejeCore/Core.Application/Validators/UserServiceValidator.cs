@@ -9,7 +9,7 @@ namespace AeldreplejeCore.Core.Application.Validators
     public class UserServiceValidator
     {
 
-        public static void ValidateUser(User user)
+        public static void ValidateUser(UserDTO user)
         {
             if (user == null)
             {
@@ -48,7 +48,7 @@ namespace AeldreplejeCore.Core.Application.Validators
             }
         }
 
-        public static void ValidateUpdateUser(User user)
+        public static void ValidateUpdateUser(UserDTO user)
         {
             ValidateUser(user);
             if (user.Id < 1)

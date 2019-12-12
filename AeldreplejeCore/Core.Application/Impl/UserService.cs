@@ -19,7 +19,7 @@ namespace AeldreplejeCore.Core.Application.Impl
             _groupRepo = groupRepo;
         }
 
-        public User CreateUser(User user)
+        public User CreateUser(UserDTO user)
         {
             UserServiceValidator.ValidateUser(user);
             if (_groupRepo.GetGroup(user.Group.Id) == null)
@@ -44,7 +44,7 @@ namespace AeldreplejeCore.Core.Application.Impl
             return _userRepository.GetUser(id);
         }
 
-        public User UpdateUser(User user)
+        public User UpdateUser(UserDTO user)
         {
             UserServiceValidator.ValidateUpdateUser(user);
             return _userRepository.UpdateUser(user);

@@ -9,8 +9,8 @@ namespace AeldreplejeCore.Core.Domain
     {
         List<User> GetAllUsers();
         User GetUser(int id);
-        User CreateUser(User user);
-        User UpdateUser(User user);
+        User CreateUser(UserDTO user);
+        User UpdateUser(UserDTO user);
         User DeleteUser(int id);
         List<User> LogIn();
 

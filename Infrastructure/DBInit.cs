@@ -54,16 +54,17 @@ namespace AeldreplejeInfrastructure
             var SSA = ctx.Groups.Add(new Group()
             {
                 Type = "SSA",
+                QualificationNumber = 3, 
                 Users = new List<User>
                 {
                     userNormal,
-                    userNormal2,
                     userNormal3
                 }
             }).Entity;
             var SSH = ctx.Groups.Add(new Group()
             {
                 Type = "SSH",
+                QualificationNumber = 2, 
                 Users = new List<User>
                 {
                   userAdmin,
@@ -72,6 +73,7 @@ namespace AeldreplejeInfrastructure
             var UDD = ctx.Groups.Add(new Group()
             {
                 Type = "UDD",
+                QualificationNumber = 1,
                 Users = new List<User>
                 {
                     userNormal2
@@ -92,11 +94,25 @@ namespace AeldreplejeInfrastructure
             {
                 Date = DateTime.Now,
                 Route = route1,
+                ShiftQualificationNumber = 1,
                 User = userNormal,
                 TimeEnd = DateTime.MaxValue,
                 TimeStart = DateTime.Today,
                 ActiveRoute = true,
                 RouteId = route1.Id
+                
+            }).Entity;
+            
+            var shift2 = ctx.Shifts.Add(new Shift()
+            {
+                Date = DateTime.Now,
+                Route = route2,
+                ShiftQualificationNumber = 2,
+                TimeEnd = DateTime.MaxValue,
+                TimeStart = DateTime.Today,
+                ActiveRoute = true,
+                RouteId = route2.Id
+                
             }).Entity;
 
             var ps = ctx.PendingShifts.Add(new PendingShift()
@@ -112,6 +128,20 @@ namespace AeldreplejeInfrastructure
                 },
                 ShiftId = shift1.Id
             }).Entity;
+
+            
+            var pps = ctx.PendingShifts.Add(new PendingShift()
+            {
+                Shift = shift2,
+                
+                
+                ShiftId = shift2.Id
+            }).Entity;
+            
+            
+            
+            
+
 
             var ar = ctx.ActiveRoutes.Add(new ActiveRoute()
             {
@@ -156,9 +186,11 @@ namespace AeldreplejeInfrastructure
 
 
 
+
             ctx.SaveChanges();
         }
 
+        
         private static void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512())

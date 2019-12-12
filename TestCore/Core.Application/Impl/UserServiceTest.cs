@@ -29,7 +29,7 @@ namespace TestCore.Core.Application.Impl
 
             var service = new UserService(userRepo.Object);
 
-            var user = new User()
+            var user = new UserDTO()
             {
                 Name = "",
                 Email = "Email@email.com",
@@ -51,7 +51,7 @@ namespace TestCore.Core.Application.Impl
 
             var service = new UserService(userRepo.Object);
 
-            var user = new User()
+            var user = new UserDTO()
             {
                 Name = null,
                 Email = "Email@email.com",
@@ -74,7 +74,7 @@ namespace TestCore.Core.Application.Impl
 
             var service = new UserService(userRepo.Object);
 
-            var user = new User()
+            var user = new UserDTO()
             {
                 Name = "Dabdab",
                 Email = null,
@@ -97,7 +97,7 @@ namespace TestCore.Core.Application.Impl
 
             var service = new UserService(userRepo.Object);
 
-            var user = new User()
+            var user = new UserDTO()
             {
                 Name = "Dabdab",
                 Email = "",
@@ -120,7 +120,7 @@ namespace TestCore.Core.Application.Impl
 
             var service = new UserService(userRepo.Object);
 
-            var user = new User()
+            var user = new UserDTO()
             {
                 Name = "Dabdab",
                 Email = "Emailemail.com",
@@ -143,7 +143,7 @@ namespace TestCore.Core.Application.Impl
 
             var service = new UserService(userRepo.Object);
 
-            var user = new User()
+            var user = new UserDTO()
             {
                 Name = "Dabdab",
                 Email = "Email@emailcom",
@@ -166,7 +166,7 @@ namespace TestCore.Core.Application.Impl
 
             var service = new UserService(userRepo.Object);
 
-            var user = new User()
+            var user = new UserDTO()
             {
                 Name = "Dabdab",
                 Email = "E@mail@email.com",
@@ -189,7 +189,7 @@ namespace TestCore.Core.Application.Impl
 
             var service = new UserService(userRepo.Object);
 
-            var user = new User()
+            var user = new UserDTO()
             {
                 Name = "Dabdab",
                 Email = "Email@email.com",
@@ -285,7 +285,7 @@ namespace TestCore.Core.Application.Impl
 
             var service = new UserService(userRepo.Object);
 
-            var user = new User()
+            var user = new UserDTO()
             {
                 Name = "",
                 Email = "Email@email.com",
@@ -307,7 +307,7 @@ namespace TestCore.Core.Application.Impl
 
             var service = new UserService(userRepo.Object);
 
-            var user = new User()
+            var user = new UserDTO()
             {
                 Name = null,
                 Email = "Email@email.com",
@@ -330,7 +330,7 @@ namespace TestCore.Core.Application.Impl
 
             var service = new UserService(userRepo.Object);
 
-            var user = new User()
+            var user = new UserDTO()
             {
                 Name = "Dabdab",
                 Email = null,
@@ -353,7 +353,7 @@ namespace TestCore.Core.Application.Impl
 
             var service = new UserService(userRepo.Object);
 
-            var user = new User()
+            var user = new UserDTO()
             {
                 Name = "Dabdab",
                 Email = "",
@@ -376,7 +376,7 @@ namespace TestCore.Core.Application.Impl
 
             var service = new UserService(userRepo.Object);
 
-            var user = new User()
+            var user = new UserDTO()
             {
                 Name = "Dabdab",
                 Email = "Emailemail.com",
@@ -399,7 +399,7 @@ namespace TestCore.Core.Application.Impl
 
             var service = new UserService(userRepo.Object);
 
-            var user = new User()
+            var user = new UserDTO()
             {
                 Name = "Dabdab",
                 Email = "Email@emailcom",
@@ -422,7 +422,7 @@ namespace TestCore.Core.Application.Impl
 
             var service = new UserService(userRepo.Object);
 
-            var user = new User()
+            var user = new UserDTO()
             {
                 Name = "Dabdab",
                 Email = "E@mail@email.com",
@@ -451,7 +451,7 @@ namespace TestCore.Core.Application.Impl
 
             var service = new UserService(userRepo.Object);
 
-            var user = new User()
+            var user = new UserDTO()
             {
                 Name = "Dabdab",
                 Email = "Email@email.com",
@@ -475,7 +475,7 @@ namespace TestCore.Core.Application.Impl
 
             var service = new UserService(userRepo.Object);
 
-            var user = new User()
+            var user = new UserDTO()
             {
                 Name = "Dabdab",
                 Email = "Email@email.com",

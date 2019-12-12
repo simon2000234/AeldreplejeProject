@@ -5,21 +5,40 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-
+using AeldreplejeInfrastructure.Helpers;
 
 namespace AeldreplejeInfrastructure.Repositories
 {
     public class UserRepo : IUserRepo
     {
         private AeldrePlejeContext _context;
+        private IAuthenticationHelper _auth;
 
-        public UserRepo(AeldrePlejeContext context)
+        public UserRepo(AeldrePlejeContext context, IAuthenticationHelper authentication)
         {
             _context = context;
+            _auth = authentication;
         }
 
-        public User CreateUser(User user)
+        public User CreateUser(UserDTO userDTO)
         {
+
+            byte[] newPassHash, newPassSalt;
+            _auth.CreatePasswordHash(userDTO.Password, out newPassHash, out newPassSalt);
+            User user = new User
+            {
+                Name = userDTO.Name,
+                Email = userDTO.Email,
+                IsAdmin = userDTO.IsAdmin,
+                Group = userDTO.Group,
+                ProfilePicture = userDTO.ProfilePicture,
+                PasswordHash = newPassHash,
+                PasswordSalt = newPassSalt,
+                PShifts = userDTO.PShifts,
+                Role = userDTO.Role,
+                Shifts = userDTO.Shifts
+            };
+
             _context.Attach(user).State = EntityState.Added;
             _context.SaveChanges();
 
@@ -64,23 +83,53 @@ namespace AeldreplejeInfrastructure.Repositories
                 .ThenInclude(usp => usp.PendingShift).FirstOrDefault(u => u.Id == id);
         }
 
-        public User UpdateUser(User user)
+        public User UpdateUser(UserDTO userDTO)
         {
-            var newPShiftList = new List<UserPendingShift>(user.PShifts);
-            _context.Attach(user).State = EntityState.Modified;
-            _context.Entry(user).Collection(u => u.Shifts).IsModified = true;
-            _context.Entry(user).Reference(u => u.Group).IsModified = true;
 
-            var shifts = _context.Shifts.Where(s => s.User.Id == user.Id && !user.Shifts.Exists(us => us.Id == s.Id));
-
-            foreach (var shift in shifts)
+            byte[] newPassHash, newPassSalt;
+            _auth.CreatePasswordHash(userDTO.Password, out newPassHash, out newPassSalt);
+            User user = new User
             {
-                shift.User = null;
-                _context.Entry(shift).Reference(s => s.User).IsModified = true;
-            }
+                Id = userDTO.Id,
+                Name = userDTO.Name,
+                Email = userDTO.Email,
+                IsAdmin = userDTO.IsAdmin,
+                PasswordHash = newPassHash,
+                PasswordSalt = newPassSalt,
+                Group = userDTO.Group,
+                ProfilePicture = userDTO.ProfilePicture,
+                PShifts = userDTO.PShifts,
+                Role = userDTO.Role,
+                Shifts = userDTO.Shifts
+            };
+            
 
-            _context.UserPendingShifts.RemoveRange(
+            if (user.PShifts != null)
+            {
+                var newPShiftList = new List<UserPendingShift>(user.PShifts);
+            }
+            
+            _context.Attach(user).State = EntityState.Modified;
+            _context.Entry(user).Reference(u => u.Group).IsModified = true;
+            if(user.Shifts != null)
+            {
+                _context.Entry(user).Collection(u => u.Shifts).IsModified = true;
+
+                var shifts = _context.Shifts.Where(s => s.User.Id == user.Id && !user.Shifts.Exists(us => us.Id == s.Id));
+
+                foreach (var shift in shifts)
+                {
+                    shift.User = null;
+                    _context.Entry(shift).Reference(s => s.User).IsModified = true;
+                }
+            }
+            
+
+            if (user.PShifts != null)
+            {
+                _context.UserPendingShifts.RemoveRange(
                 _context.UserPendingShifts.Where(usp => usp.UserId == user.Id));
+            }
 
 
             _context.SaveChanges();
