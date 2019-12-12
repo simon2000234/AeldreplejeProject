@@ -46,6 +46,11 @@ namespace AeldreplejeCore.Core.Application.Validators
             {
                 throw new InvalidDataException("User must have a group");
             }
+
+            if (string.IsNullOrEmpty(user.Password))
+            {
+                throw new InvalidDataException("User most have a password");
+            }
         }
 
         public static void ValidateUpdateUser(UserDTO user)

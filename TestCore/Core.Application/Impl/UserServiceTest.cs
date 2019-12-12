@@ -220,7 +220,7 @@ namespace TestCore.Core.Application.Impl
 
             var service = new UserService(userRepo.Object, groupRepo.Object);
 
-            var user = new User()
+            var user = new UserDTO()
             {
                 Name = "Dabdab",
                 Email = "Email@email.com",
@@ -228,7 +228,8 @@ namespace TestCore.Core.Application.Impl
                 IsAdmin = true,
                 Role = "Normal",
                 ProfilePicture = "whatthefuck.jpg",
-                Group = group
+                Group = group,
+                Password = "password"
             };
             Exception ex = Assert.Throws<InvalidDataException>(() =>
                 service.CreateUser(user));
@@ -251,7 +252,7 @@ namespace TestCore.Core.Application.Impl
 
             var service = new UserService(userRepo.Object, groupRepo.Object);
 
-            var user = new User()
+            var user = new UserDTO()
             {
                 Name = "Dabdab",
                 Email = "Email@email.com",
@@ -259,10 +260,77 @@ namespace TestCore.Core.Application.Impl
                 IsAdmin = true,
                 Role = "Normal",
                 ProfilePicture = "whatthefuck.jpg",
-                Group = group
+                Group = group,
+                Password = "password"
             };
             service.CreateUser(user);
             groupRepo.Verify(x => x.GetGroup(group.Id), Times.Once);
+        }
+
+        [Fact]
+        public void CreateUserWithNullPassword()
+        {
+            var group = new Group()
+            {
+                Id = 1,
+                Type = "VinVin"
+            };
+
+            var userRepo = new Mock<IUserRepo>();
+            var groupRepo = new Mock<IGroupRepo>();
+            groupRepo.Setup(x => x.GetGroup(It.IsAny<int>()))
+                .Returns(group);
+
+            var service = new UserService(userRepo.Object, groupRepo.Object);
+
+            var user = new UserDTO()
+            {
+                Name = "Dabdab",
+                Email = "Email@email.com",
+                Id = 1,
+                IsAdmin = true,
+                Role = "Normal",
+                ProfilePicture = "whatthefuck.jpg",
+                Group = group,
+                Password = null
+            };
+
+            Exception ex = Assert.Throws<InvalidDataException>(() =>
+                service.CreateUser(user));
+            Assert.Equal("User most have a password", ex.Message);
+        }
+
+        [Fact]
+        public void CreateUserWithEmptyPassword()
+        {
+            var group = new Group()
+            {
+                Id = 1,
+                Type = "VinVin"
+            };
+
+            var userRepo = new Mock<IUserRepo>();
+            var groupRepo = new Mock<IGroupRepo>();
+            groupRepo.Setup(x => x.GetGroup(It.IsAny<int>()))
+                .Returns(group);
+
+            var service = new UserService(userRepo.Object, groupRepo.Object);
+
+            var user = new UserDTO()
+            {
+                Name = "Dabdab",
+                Email = "Email@email.com",
+                Id = 1,
+                IsAdmin = true,
+                Role = "Normal",
+                ProfilePicture = "whatthefuck.jpg",
+                Group = group,
+                Password = ""
+            };
+
+            Exception ex = Assert.Throws<InvalidDataException>(() =>
+                service.CreateUser(user));
+            Assert.Equal("User most have a password", ex.Message);
         }
 
         [Fact]
@@ -459,7 +527,8 @@ namespace TestCore.Core.Application.Impl
                 IsAdmin = true,
                 Role = "Normal",
                 ProfilePicture = "whatthefuck.jpg",
-                Group = group
+                Group = group,
+                Password = "password"
             };
 
             Exception ex = Assert.Throws<InvalidDataException>(() =>
@@ -490,6 +559,72 @@ namespace TestCore.Core.Application.Impl
                 service.UpdateUser(user));
             Assert.Equal("User must have a group", ex.Message);
 
+        }
+
+        [Fact]
+        public void UpdateUserWithNullPassword()
+        {
+            var group = new Group()
+            {
+                Id = 1,
+                Type = "VinVin"
+            };
+
+            var userRepo = new Mock<IUserRepo>();
+            var groupRepo = new Mock<IGroupRepo>();
+            groupRepo.Setup(x => x.GetGroup(It.IsAny<int>()))
+                .Returns(group);
+
+            var service = new UserService(userRepo.Object, groupRepo.Object);
+
+            var user = new UserDTO()
+            {
+                Name = "Dabdab",
+                Email = "Email@email.com",
+                Id = 1,
+                IsAdmin = true,
+                Role = "Normal",
+                ProfilePicture = "whatthefuck.jpg",
+                Group = group,
+                Password = null
+            };
+
+            Exception ex = Assert.Throws<InvalidDataException>(() =>
+                service.UpdateUser(user));
+            Assert.Equal("User most have a password", ex.Message);
+        }
+
+        [Fact]
+        public void UpdateUserWithEmptyPassword()
+        {
+            var group = new Group()
+            {
+                Id = 1,
+                Type = "VinVin"
+            };
+
+            var userRepo = new Mock<IUserRepo>();
+            var groupRepo = new Mock<IGroupRepo>();
+            groupRepo.Setup(x => x.GetGroup(It.IsAny<int>()))
+                .Returns(group);
+
+            var service = new UserService(userRepo.Object, groupRepo.Object);
+
+            var user = new UserDTO()
+            {
+                Name = "Dabdab",
+                Email = "Email@email.com",
+                Id = 1,
+                IsAdmin = true,
+                Role = "Normal",
+                ProfilePicture = "whatthefuck.jpg",
+                Group = group,
+                Password = ""
+            };
+
+            Exception ex = Assert.Throws<InvalidDataException>(() =>
+                service.UpdateUser(user));
+            Assert.Equal("User most have a password", ex.Message);
         }
     }
 }
