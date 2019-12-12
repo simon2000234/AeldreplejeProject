@@ -23,6 +23,7 @@ namespace AeldreplejeAPI.Controllers
 
         // GET api/users
         [HttpGet]
+        [Authorize]
         public ActionResult<IEnumerable<User>> Get()
         {
             try
@@ -52,6 +53,7 @@ namespace AeldreplejeAPI.Controllers
 
         // GET api/users/5
         [HttpGet("{id}")]
+        [Authorize]
         public ActionResult<User> Get(int id)
         {
             try

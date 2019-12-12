@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AeldreplejeCore.Core.Application;
 using AeldreplejeCore.Core.Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,6 +22,7 @@ namespace AeldreplejeAPI.Controllers
         }
         // GET api/timeends
         [HttpGet]
+        [Authorize]
         public ActionResult<IEnumerable<TimeEnd>> Get()
         {
             try
@@ -35,6 +37,7 @@ namespace AeldreplejeAPI.Controllers
 
         // POST api/timeends
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public ActionResult<TimeEnd> Post([FromBody] TimeEnd timeEnd)
         {
             try
@@ -49,6 +52,7 @@ namespace AeldreplejeAPI.Controllers
 
         // GET api/timeends/5
         [HttpGet("{id}")]
+        [Authorize]
         public ActionResult<TimeEnd> Get(int id)
         {
             try
@@ -63,6 +67,7 @@ namespace AeldreplejeAPI.Controllers
 
         // PUT api/timeends/5
         [HttpPut("{id}")]
+        [Authorize(Roles = "Administrator")]
         public ActionResult<TimeEnd> Put(int id, [FromBody] TimeEnd timeEnd)
         {
             try
@@ -77,6 +82,7 @@ namespace AeldreplejeAPI.Controllers
 
         // DELETE api/timeends/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrator")]
         public ActionResult<TimeEnd> Delete(int id)
         {
             try

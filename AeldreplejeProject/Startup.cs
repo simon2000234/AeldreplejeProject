@@ -70,7 +70,7 @@ namespace AeldreplejeAPI
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(secretBytes),
                     ValidateLifetime = true, //validate the expiration and not before values in the token
-                    ClockSkew = TimeSpan.FromMinutes(10) //5 minute tolerance for the expiration date
+                    ClockSkew = TimeSpan.FromMinutes(60) //60 minute tolerance for the expiration date
                 };
             });
             services.AddScoped<IUserRepo, UserRepo>();

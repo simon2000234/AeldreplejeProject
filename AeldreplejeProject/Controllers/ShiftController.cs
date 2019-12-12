@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using AeldreplejeCore.Core.Application;
 using AeldreplejeCore.Core.Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AeldreplejeAPI.Controllers
@@ -18,6 +19,7 @@ namespace AeldreplejeAPI.Controllers
         }
         // GET api/shifts
         [HttpGet]
+        [Authorize]
         public ActionResult<IEnumerable<Shift>> Get()
         {
             try
@@ -32,6 +34,7 @@ namespace AeldreplejeAPI.Controllers
 
         // POST api/shifts
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public ActionResult<Shift> Post([FromBody] Shift shift)
         {
             try
@@ -46,6 +49,7 @@ namespace AeldreplejeAPI.Controllers
 
         // GET api/shifts/5
         [HttpGet("{id}")]
+        [Authorize]
         public ActionResult<Shift> Get(int id)
         {
             try
@@ -60,6 +64,7 @@ namespace AeldreplejeAPI.Controllers
 
         // PUT api/shifts/5
         [HttpPut("{id}")]
+        [Authorize(Roles = "Administrator")]
         public ActionResult<Shift> Put(int id, [FromBody] Shift shift)
         {
             try
@@ -74,6 +79,7 @@ namespace AeldreplejeAPI.Controllers
 
         // DELETE api/shifts/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrator")]
         public ActionResult<Shift> Delete(int id)
         {
             try

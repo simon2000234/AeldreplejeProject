@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AeldreplejeCore.Core.Application;
 using AeldreplejeCore.Core.Application.Impl;
 using AeldreplejeCore.Core.Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,6 +23,7 @@ namespace AeldreplejeAPI.Controllers
 
         // GET api/activeroutes
         [HttpGet]
+        [Authorize]
         public ActionResult<IEnumerable<ActiveRoute>> Get()
         {
             try
@@ -36,6 +38,7 @@ namespace AeldreplejeAPI.Controllers
 
         // POST api/activeroutes
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public ActionResult<ActiveRoute> Post([FromBody] ActiveRoute activeRoute)
         {
             try
@@ -50,6 +53,7 @@ namespace AeldreplejeAPI.Controllers
 
         // GET api/activeroutes/5
         [HttpGet("{id}")]
+        [Authorize]
         public ActionResult<ActiveRoute> Get(int id)
         {
             try
@@ -64,6 +68,7 @@ namespace AeldreplejeAPI.Controllers
 
         // PUT api/activeroutes/5
         [HttpPut("{id}")]
+        [Authorize(Roles = "Administrator")]
         public ActionResult<ActiveRoute> Put(int id, [FromBody] ActiveRoute activeRoute)
         {
             try
@@ -78,6 +83,7 @@ namespace AeldreplejeAPI.Controllers
 
         // DELETE api/activeroutes/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrator")]
         public ActionResult<ActiveRoute> Delete(int id)
         {
             try

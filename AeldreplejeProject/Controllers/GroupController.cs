@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using AeldreplejeCore.Core.Application.Impl;
 using AeldreplejeCore.Core.Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AeldreplejeAPI.Controllers
@@ -12,79 +13,84 @@ namespace AeldreplejeAPI.Controllers
     {
         private IGroupService _groupService;
 
-            public GroupController(IGroupService groupService)
-            {
-                _groupService = groupService;
-            }
+        public GroupController(IGroupService groupService)
+        {
+            _groupService = groupService;
+        }
 
-            // GET api/groups
-            [HttpGet]
-            public ActionResult<IEnumerable<Group>> Get()
+        // GET api/groups
+        [HttpGet]
+        [Authorize]
+        public ActionResult<IEnumerable<Group>> Get()
+        {
+            try
             {
-                try
-                {
-                    return _groupService.GetAllGroups();
-                }
-                catch (Exception e)
-                {
-                    return BadRequest(e.Message);
-                }
+                return _groupService.GetAllGroups();
             }
-
-            // POST api/groups
-            [HttpPost]
-            public ActionResult<Group> Post([FromBody] Group group)
+            catch (Exception e)
             {
-                try
-                {
-                    return Ok(_groupService.CreateGroup(group));
-                }
-                catch (Exception e)
-                {
-                    return BadRequest(e.Message);
-                }
+                return BadRequest(e.Message);
             }
+        }
 
-            // GET api/groups/5
-            [HttpGet("{id}")]
-            public ActionResult<Group> Get(int id)
+        // POST api/groups
+        [HttpPost]
+        [Authorize(Roles = "Administrator")]
+        public ActionResult<Group> Post([FromBody] Group group)
+        {
+            try
             {
-                try
-                {
-                    return Ok(_groupService.GetGroup(id));
-                }
-                catch (Exception e)
-                {
-                    return BadRequest(e.Message);
-                }
+                return Ok(_groupService.CreateGroup(group));
             }
-
-            // PUT api/groups/5
-            [HttpPut("{id}")]
-            public ActionResult<Group> Put(int id, [FromBody] Group group)
+            catch (Exception e)
             {
-                try
-                {
-                    return Ok(_groupService.UpdateGroup(group));
-                }
-                catch (Exception e)
-                {
-                    return BadRequest(e.Message);
-                }
+                return BadRequest(e.Message);
             }
+        }
 
-            // DELETE api/groups/5
-            [HttpDelete("{id}")]
-            public ActionResult<Group> Delete(int id)
+        // GET api/groups/5
+        [HttpGet("{id}")]
+        [Authorize]
+        public ActionResult<Group> Get(int id)
+        {
+            try
             {
-                try
-                {
-                    return Ok(_groupService.DeleteGroup(id));
-                }
-                catch (Exception e)
-                {
-                    return BadRequest(e.Message);
-                }
+                return Ok(_groupService.GetGroup(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        // PUT api/groups/5
+        [HttpPut("{id}")]
+        [Authorize(Roles = "Administrator")]
+        public ActionResult<Group> Put(int id, [FromBody] Group group)
+        {
+            try
+            {
+                return Ok(_groupService.UpdateGroup(group));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        // DELETE api/groups/5
+        [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrator")]
+        public ActionResult<Group> Delete(int id)
+        {
+            try
+            {
+                return Ok(_groupService.DeleteGroup(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
             }
         }
     }
+}

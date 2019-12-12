@@ -236,6 +236,36 @@ namespace TestCore.Core.Application.Impl
         }
 
         [Fact]
+        public void CreateUserWithGroupShouldOnlyCallReadGroupIdOnce()
+        {
+            var group = new Group()
+            {
+                Id = 1,
+                Type = "VinVin"
+            };
+
+            var userRepo = new Mock<IUserRepo>();
+            var groupRepo = new Mock<IGroupRepo>();
+            groupRepo.Setup(x => x.GetGroup(It.IsAny<int>()))
+                .Returns(group);
+
+            var service = new UserService(userRepo.Object, groupRepo.Object);
+
+            var user = new User()
+            {
+                Name = "Dabdab",
+                Email = "Email@email.com",
+                Id = 1,
+                IsAdmin = true,
+                Role = "Normal",
+                ProfilePicture = "whatthefuck.jpg",
+                Group = group
+            };
+            service.CreateUser(user);
+            groupRepo.Verify(x => x.GetGroup(group.Id), Times.Once);
+        }
+
+        [Fact]
         public void UpdateNullUserThrowsException()
         {
             var userRepo = new Mock<IUserRepo>();
