@@ -22,6 +22,9 @@ namespace AeldreplejeInfrastructure.Repositories
                 .Include(p=> p.Users)
                 .ThenInclude(usp => usp.User)
                 .ThenInclude(u => u.Shifts)
+                .Include(p => p.Users)
+                .ThenInclude(usp => usp.User)
+                .ThenInclude(u => u.Group)
                 .ToList();
         }
 
