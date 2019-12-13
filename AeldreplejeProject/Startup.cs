@@ -120,7 +120,6 @@ namespace AeldreplejeAPI
                     }
                     app.UseHsts();
                 }
-
             app.UseHttpsRedirection();
             app.UseCors(monkey => monkey.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseAuthentication();
