@@ -20,4 +20,8 @@
     <ProjectReference Include="..\Infrastructure\AeldreplejeInfrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+
 </Project>

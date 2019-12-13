@@ -36,10 +36,10 @@ namespace AeldreplejeInfrastructure
                 .HasForeignKey<PendingShift>(p => p.ShiftId).OnDelete(DeleteBehavior.SetNull); 
             modelBuilder.Entity<UserPendingShift>().HasOne(up => up.User)
                 .WithMany(u => u.PShifts)
-                .HasForeignKey(up => up.UserId).OnDelete(DeleteBehavior.SetNull);
+                .HasForeignKey(up => up.UserId).OnDelete(DeleteBehavior.Cascade);
             modelBuilder.Entity<UserPendingShift>().HasOne(up => up.PendingShift)
                 .WithMany(p => p.Users)
-                .HasForeignKey(up => up.PendingShiftId).OnDelete(DeleteBehavior.SetNull);
+                .HasForeignKey(up => up.PendingShiftId).OnDelete(DeleteBehavior.Cascade);
         }
 
 

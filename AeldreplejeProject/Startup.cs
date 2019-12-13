@@ -39,19 +39,6 @@ namespace AeldreplejeAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            if (Environment.IsDevelopment())
-            {
-                // In-memory database:
-                services.AddDbContext<AeldrePlejeContext>(opt => 
-                    opt.UseSqlite("Data Source=AeldrePleje.db"));
-            }
-            else
-            {
-                // Azure SQL database:
-                services.AddDbContext<AeldrePlejeContext>(opt =>
-                    opt.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
-            }
             // Create a byte array with random values. This byte array is used
             // to generate a key for signing JWT tokens.
             Byte[] secretBytes = new byte[40];
@@ -98,6 +85,19 @@ namespace AeldreplejeAPI
                 opt.SerializerSettings.MaxDepth = 10;
             });
 
+            if (Environment.IsDevelopment())
+            {
+                // In-memory database:
+                services.AddDbContext<AeldrePlejeContext>(opt =>
+                    opt.UseSqlite("Data Source=AeldrePleje.db"));
+            }
+            else
+            {
+                // Azure SQL database:
+                services.AddDbContext<AeldrePlejeContext>(opt =>
+                    opt.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
+            }
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -114,7 +114,10 @@ namespace AeldreplejeAPI
                 else
                 {
                     var ctx = scope.ServiceProvider.GetService<AeldrePlejeContext>();
-                    ctx.Database.EnsureCreated();
+                    if(ctx.Database.EnsureCreated())
+                    {
+                        DBInit.SeedDB(ctx);
+                    }
                     app.UseHsts();
                 }
 
