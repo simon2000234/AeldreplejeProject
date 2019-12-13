@@ -1,8 +1,8 @@
 language: csharp
 mono: none
+dist: xenial
 dotnet: 2.2
 solution: AeldreplejeProject.sln
-dist: xenial
 
 script:
  - dotnet restore
