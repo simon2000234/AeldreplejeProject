@@ -1,8 +1,17 @@
+sudo: required
 language: csharp
 mono: none
-dist: xenial
 dotnet: 2.2
 solution: AeldreplejeProject.sln
+
+addons:
+snaps:
+- name: dotnet-sdk
+confinement: classic
+channel: 2.2/stable
+
+before_script:
+- sudo snap alias dotnet-sdk.dotnet dotnet
 
 script:
  - dotnet restore
