@@ -7,8 +7,8 @@ solution: AeldreplejeProject.sln
 addons:
 snaps:
 - name: dotnet-sdk
-confinement: classic
-channel: 2.2/stable
+  confinement: classic
+  channel: 2.2/stable
 
 before_script:
 - sudo snap alias dotnet-sdk.dotnet dotnet
