@@ -17,7 +17,10 @@ namespace AeldreplejeInfrastructure.Repositories
 
         public List<Shift> GetAllShifts()
         {
-            return _context.Shifts.Include(s => s.Route).Include(s => s.User).ToList();
+            return _context.Shifts
+                .Include(s => s.Route)
+                .Include(s => s.User)
+                .ToList();
         }
 
         public Shift GetShift(int id)
@@ -30,19 +33,8 @@ namespace AeldreplejeInfrastructure.Repositories
 
         public Shift CreateShift(Shift shift)
         {
-            //Old superior code
-            /*Route route = shift.Route;
-            route.Shift = shift;
-            shift.RouteId = route.Id;
-            _context.Attach(route).State = EntityState.Added;*/
             _context.Attach(shift).State = EntityState.Added;
             _context.SaveChanges();
-            /*User user = _context.Users.FirstOrDefault(u => u.Id == shift.User.Id);
-            if (user != null)
-            {
-                user.Shifts.Add(shift);
-                shift.User = user;
-            }*/
             Route route = _context.Routes.FirstOrDefault(r => r.Id == shift.Route.Id);
             shift.Route = route;
             route.Shift = shift;
