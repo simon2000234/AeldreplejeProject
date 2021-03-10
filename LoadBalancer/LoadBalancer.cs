@@ -11,6 +11,7 @@ namespace LoadBalancer
 
         private LoadBalancer()
         {
+            hosts = new Queue<string>();
         }
 
         public static LoadBalancer GetInstance()
