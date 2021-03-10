@@ -8,25 +8,58 @@ namespace LoadBalancer.Monitoring
 {
     public class LogRepository
     {
-        public void Insert(LogRequest item )
+        public void Insert(LogRequest item)
         {
-            using (StreamWriter w = File.AppendText("log.txt"))
-            {
-                LogToFile(item);
-            }
+            
+            LogToFile(item);
+
         }
 
-        private void LogToFile( LogRequest l)
+        private void LogToFile(LogRequest l)
         {
-            TextWriter w = new StreamWriter("log.txt");
+            var file = new FileInfo("log.txt");
+            bool locked = true;
+            while (locked)
+            {
+                locked = IsFileLocked(file);
+            }
 
+            var stream = File.AppendText("log.txt");
+            TextWriter w = stream;
+            
             w.Write("\r\nLog Entry : ");
             w.WriteLine($"{DateTime.Now.ToLongTimeString()} {DateTime.Now.ToLongDateString()}");
-            w.WriteLine("  :"); 
+            w.WriteLine("  :");
             w.WriteLine($"  :{l.TimeMs.ToString()}");
             w.WriteLine($"  :{l.Path.ToString()}");
             w.WriteLine($"  :{l.ToString()}");
             w.WriteLine("-------------------------------");
+            w.Close();
+            w.Dispose();
+            stream.Close();
+            stream.Dispose();
+        }
+
+        protected virtual bool IsFileLocked(FileInfo file)
+        {
+            try
+            {
+                using (FileStream stream = file.Open(FileMode.Open, FileAccess.Read, FileShare.None))
+                {
+                    stream.Close();
+                }
+            }
+            catch (IOException)
+            {
+                //the file is unavailable because it is:
+                //still being written to
+                //or being processed by another thread
+                //or does not exist (has already been processed)
+                return true;
+            }
+
+            //file is not locked
+            return false;
         }
     }
 }

@@ -30,6 +30,8 @@ namespace LoadBalancer
             services.AddControllers();
             services.AddCors();
             services.AddSwaggerGen();
+            services.AddSingleton<Log>();
+            services.AddSingleton<LogRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

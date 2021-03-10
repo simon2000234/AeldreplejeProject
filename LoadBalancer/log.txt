@@ -1,0 +1,28 @@
+
+Log Entry : 13:09:26 10 March 2021
+  :
+  :4177
+  :/api/Validation/GroupCreate
+  :LoadBalancer.Monitoring.LogRequest
+-------------------------------
+
+Log Entry : 13:12:35 10 March 2021
+  :
+  :144
+  :/weatherforecast
+  :LoadBalancer.Monitoring.LogRequest
+-------------------------------
+
+Log Entry : 13:13:34 10 March 2021
+  :
+  :804
+  :/api/Validation/GroupCreate
+  :LoadBalancer.Monitoring.LogRequest
+-------------------------------
+
+Log Entry : 13:13:39 10 March 2021
+  :
+  :218
+  :/api/Validation/GroupCreate
+  :LoadBalancer.Monitoring.LogRequest
+-------------------------------
