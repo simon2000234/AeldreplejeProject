@@ -28,6 +28,10 @@ namespace LoadBalancer
             return host;
         }
 
+        public string GetCurrent()
+        {
+            return hosts.Peek();
+        }
 
     }
 }

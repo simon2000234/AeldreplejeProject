@@ -28,12 +28,12 @@ namespace LoadBalancer.Monitoring
 
             LogRequest request = log.StartRequest();
             request.Path = context.Request.Path;
+            request.Host = LoadBalancer.GetInstance().GetCurrent();
             // streamble more than once
             context.Request.EnableBuffering();
             request.Body = await new StreamReader(context.Request.Body).ReadToEndAsync();
             //read again later
             context.Request.Body.Position = 0;
-
             request.Method = context.Request.Method;
 
             var claims = context.User.Claims;

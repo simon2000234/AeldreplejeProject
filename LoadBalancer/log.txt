@@ -26,3 +26,59 @@ Log Entry : 13:13:39 10 March 2021
   :/api/Validation/GroupCreate
   :LoadBalancer.Monitoring.LogRequest
 -------------------------------
+
+Log Entry : 13:32:29 10 March 2021
+  :
+  :97
+  :/weatherforecast
+  :https://localhost:44313
+  :LoadBalancer.Monitoring.LogRequest
+-------------------------------
+
+Log Entry : 13:33:11 10 March 2021
+  :
+  :634
+  :/api/Validation/GroupCreate
+  :https://localhost:44313
+  :LoadBalancer.Monitoring.LogRequest
+-------------------------------
+
+Log Entry : 13:33:13 10 March 2021
+  :
+  :350
+  :/api/Validation/GroupCreate
+  :https://localhost:44369
+  :LoadBalancer.Monitoring.LogRequest
+-------------------------------
+
+Log Entry : 13:36:34 10 March 2021
+  :
+  :How long in ms to get response 105
+  :/weatherforecast
+  :https://localhost:44313
+  :LoadBalancer.Monitoring.LogRequest
+-------------------------------
+
+Log Entry : 13:37:12 10 March 2021
+  :
+  :How long in ms to get response 815
+  :/api/Validation/GroupCreate
+  :https://localhost:44313
+  :LoadBalancer.Monitoring.LogRequest
+-------------------------------
+
+Log Entry : 13:37:14 10 March 2021
+  :
+  :How long in ms to get response 161
+  :/api/Validation/GroupCreate
+  :https://localhost:44369
+  :LoadBalancer.Monitoring.LogRequest
+-------------------------------
+
+Log Entry : 13:37:57 10 March 2021
+  :
+  :How long in ms to get response 127
+  :/api/Validation/GroupCreate
+  :https://localhost:44313
+  :LoadBalancer.Monitoring.LogRequest
+-------------------------------

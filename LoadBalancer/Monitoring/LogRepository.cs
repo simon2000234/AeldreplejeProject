@@ -30,9 +30,9 @@ namespace LoadBalancer.Monitoring
             w.Write("\r\nLog Entry : ");
             w.WriteLine($"{DateTime.Now.ToLongTimeString()} {DateTime.Now.ToLongDateString()}");
             w.WriteLine("  :");
-            w.WriteLine($"  :{l.TimeMs.ToString()}");
-            w.WriteLine($"  :{l.Path.ToString()}");
-            w.WriteLine($"  :{l.ToString()}");
+            w.WriteLine($"  :How long in ms to get response {l.TimeMs.ToString()}");
+            w.WriteLine($"  :The call used {l.Path.ToString()}");
+            w.WriteLine($"  :The host the load balancer sends it to {l.Host.ToString()}");
             w.WriteLine("-------------------------------");
             w.Close();
             w.Dispose();

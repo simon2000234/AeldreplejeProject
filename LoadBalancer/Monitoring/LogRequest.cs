@@ -16,6 +16,7 @@ namespace LoadBalancer.Monitoring
 		public string Path { get; set; }
 		public string Body { get; set; }
 		public string ResponseBody { get; set; }
+        public string Host { get; set; }
 
 		public long TimeMs
 		{
