@@ -7,6 +7,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using ValidationAPI.Core.Entity;
 
 namespace LoadBalancer.Controllers
 {
@@ -27,11 +29,12 @@ namespace LoadBalancer.Controllers
 
         [HttpPost]
         [Route("GroupCreate")]
-        public ActionResult ValidateGroupCreate([FromBody] string content)
+        public ActionResult ValidateGroupCreate([FromBody] Group content)
         {
             try
             {
-                StringContent data = new StringContent(content, Encoding.UTF8, "application/json");
+                string json = JsonConvert.SerializeObject(content);
+                StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
                 HttpRequestMessage request = new HttpRequestMessage
                 {
                     Content = data,
@@ -55,11 +58,12 @@ namespace LoadBalancer.Controllers
 
         [HttpPost]
         [Route("GroupUpdate")]
-        public ActionResult ValidateGroupUpdate([FromBody] string content)
+        public ActionResult ValidateGroupUpdate([FromBody] Group content)
         {
             try
             {
-                StringContent data = new StringContent(content, Encoding.UTF8, "application/json");
+                string json = JsonConvert.SerializeObject(content);
+                StringContent data = new StringContent(json, Encoding.UTF8, "application/json");
                 HttpRequestMessage request = new HttpRequestMessage
                 {
                     Content = data,

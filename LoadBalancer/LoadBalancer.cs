@@ -12,6 +12,8 @@ namespace LoadBalancer
         private LoadBalancer()
         {
             hosts = new Queue<string>();
+            hosts.Enqueue("https://localhost:44313");
+            hosts.Enqueue("https://localhost:44369");
         }
 
         public static LoadBalancer GetInstance()

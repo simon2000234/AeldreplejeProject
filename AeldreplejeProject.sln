@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AeldreplejeInfrastructure",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestCore", "TestCore\TestCore.csproj", "{9EB21CD0-CC7B-4D53-AE7D-0CA6DDCD5FC0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidationAPI", "ValidationAPI\ValidationAPI.csproj", "{F6C5635D-588D-4371-A876-ECE1CD0E7E92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidationAPI1", "ValidationAPI\ValidationAPI1.csproj", "{F6C5635D-588D-4371-A876-ECE1CD0E7E92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadBalancer", "LoadBalancer\LoadBalancer.csproj", "{569478FF-C97C-41A5-8595-0C51A934DF84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadBalancer", "LoadBalancer\LoadBalancer.csproj", "{569478FF-C97C-41A5-8595-0C51A934DF84}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidationAPI2", "ValidationAPI2\ValidationAPI2.csproj", "{1D9287A6-16A1-4743-87B5-9A18A28A17F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{569478FF-C97C-41A5-8595-0C51A934DF84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{569478FF-C97C-41A5-8595-0C51A934DF84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{569478FF-C97C-41A5-8595-0C51A934DF84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D9287A6-16A1-4743-87B5-9A18A28A17F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D9287A6-16A1-4743-87B5-9A18A28A17F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D9287A6-16A1-4743-87B5-9A18A28A17F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D9287A6-16A1-4743-87B5-9A18A28A17F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
