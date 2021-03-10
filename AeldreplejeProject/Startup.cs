@@ -19,6 +19,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 
 namespace AeldreplejeAPI
@@ -98,6 +99,19 @@ namespace AeldreplejeAPI
                     opt.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
             }
 
+            services.AddSwaggerGen(c =>
+            {
+                c.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
+                {
+                    Description = "Please enter into the field below the JWT Token. You do NOT need to add the word Bearer",
+                    Type = SecuritySchemeType.Http,
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Scheme = "bearer"
+                });
+            });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -120,6 +134,17 @@ namespace AeldreplejeAPI
                     }
                     app.UseHsts();
                 }
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+
             app.UseHttpsRedirection();
             app.UseCors(monkey => monkey.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseAuthentication();

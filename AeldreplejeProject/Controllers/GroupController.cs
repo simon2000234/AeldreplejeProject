@@ -20,7 +20,7 @@ namespace AeldreplejeAPI.Controllers
 
         // GET api/groups
         [HttpGet]
-        [Authorize]
+        //[Authorize]
         public ActionResult<IEnumerable<Group>> Get()
         {
             try
@@ -35,7 +35,7 @@ namespace AeldreplejeAPI.Controllers
 
         // POST api/groups
         [HttpPost]
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         public ActionResult<Group> Post([FromBody] Group group)
         {
             try

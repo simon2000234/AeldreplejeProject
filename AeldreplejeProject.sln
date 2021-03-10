@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AeldreplejeCore", "Aeldrepl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AeldreplejeInfrastructure", "Infrastructure\AeldreplejeInfrastructure.csproj", "{20B5E331-471B-4695-B873-6533BB1A4875}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCore", "TestCore\TestCore.csproj", "{9EB21CD0-CC7B-4D53-AE7D-0CA6DDCD5FC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestCore", "TestCore\TestCore.csproj", "{9EB21CD0-CC7B-4D53-AE7D-0CA6DDCD5FC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationAPI", "ValidationAPI\ValidationAPI.csproj", "{F6C5635D-588D-4371-A876-ECE1CD0E7E92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{9EB21CD0-CC7B-4D53-AE7D-0CA6DDCD5FC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EB21CD0-CC7B-4D53-AE7D-0CA6DDCD5FC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EB21CD0-CC7B-4D53-AE7D-0CA6DDCD5FC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6C5635D-588D-4371-A876-ECE1CD0E7E92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6C5635D-588D-4371-A876-ECE1CD0E7E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6C5635D-588D-4371-A876-ECE1CD0E7E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6C5635D-588D-4371-A876-ECE1CD0E7E92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
