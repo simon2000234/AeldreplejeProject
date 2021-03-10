@@ -39,7 +39,7 @@ namespace AeldreplejeCore.Core.Application.Impl
             {
                 Content = data,
                 Method = HttpMethod.Post,
-                RequestUri = new Uri("https://localhost:44313/api/Validator/GroupCreate")
+                RequestUri = new Uri("https://localhost:44303/api/Validation/GroupCreate")
             };
             var result = _client.SendAsync(request).Result;
 
