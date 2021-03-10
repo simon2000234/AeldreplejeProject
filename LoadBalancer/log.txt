@@ -1,84 +1,146 @@
-
-Log Entry : 13:09:26 10 March 2021
+Log Entry : 13:43:45 10 March 2021
   :
-  :4177
-  :/api/Validation/GroupCreate
-  :LoadBalancer.Monitoring.LogRequest
+  :How long in ms to get response 581
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44313
 -------------------------------
 
-Log Entry : 13:12:35 10 March 2021
-  :
-  :144
-  :/weatherforecast
-  :LoadBalancer.Monitoring.LogRequest
--------------------------------
-
-Log Entry : 13:13:34 10 March 2021
-  :
-  :804
-  :/api/Validation/GroupCreate
-  :LoadBalancer.Monitoring.LogRequest
--------------------------------
-
-Log Entry : 13:13:39 10 March 2021
-  :
-  :218
-  :/api/Validation/GroupCreate
-  :LoadBalancer.Monitoring.LogRequest
--------------------------------
-
-Log Entry : 13:32:29 10 March 2021
-  :
-  :97
-  :/weatherforecast
-  :https://localhost:44313
-  :LoadBalancer.Monitoring.LogRequest
--------------------------------
-
-Log Entry : 13:33:11 10 March 2021
-  :
-  :634
-  :/api/Validation/GroupCreate
-  :https://localhost:44313
-  :LoadBalancer.Monitoring.LogRequest
--------------------------------
-
-Log Entry : 13:33:13 10 March 2021
-  :
-  :350
-  :/api/Validation/GroupCreate
-  :https://localhost:44369
-  :LoadBalancer.Monitoring.LogRequest
--------------------------------
-
-Log Entry : 13:36:34 10 March 2021
-  :
-  :How long in ms to get response 105
-  :/weatherforecast
-  :https://localhost:44313
-  :LoadBalancer.Monitoring.LogRequest
--------------------------------
-
-Log Entry : 13:37:12 10 March 2021
-  :
-  :How long in ms to get response 815
-  :/api/Validation/GroupCreate
-  :https://localhost:44313
-  :LoadBalancer.Monitoring.LogRequest
--------------------------------
-
-Log Entry : 13:37:14 10 March 2021
-  :
-  :How long in ms to get response 161
-  :/api/Validation/GroupCreate
-  :https://localhost:44369
-  :LoadBalancer.Monitoring.LogRequest
--------------------------------
-
-Log Entry : 13:37:57 10 March 2021
+Log Entry : 13:43:46 10 March 2021
   :
   :How long in ms to get response 127
-  :/api/Validation/GroupCreate
-  :https://localhost:44313
-  :LoadBalancer.Monitoring.LogRequest
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44369
+-------------------------------
+
+Log Entry : 13:43:49 10 March 2021
+  :
+  :How long in ms to get response 25
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44313
+-------------------------------
+
+Log Entry : 13:43:50 10 March 2021
+  :
+  :How long in ms to get response 25
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44369
+-------------------------------
+
+Log Entry : 13:43:51 10 March 2021
+  :
+  :How long in ms to get response 27
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44313
+-------------------------------
+
+Log Entry : 13:43:52 10 March 2021
+  :
+  :How long in ms to get response 14
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44369
+-------------------------------
+
+Log Entry : 13:43:53 10 March 2021
+  :
+  :How long in ms to get response 14
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44313
+-------------------------------
+
+Log Entry : 13:43:54 10 March 2021
+  :
+  :How long in ms to get response 16
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44369
+-------------------------------
+
+Log Entry : 13:43:55 10 March 2021
+  :
+  :How long in ms to get response 20
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44313
+-------------------------------
+
+Log Entry : 13:43:55 10 March 2021
+  :
+  :How long in ms to get response 17
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44369
+-------------------------------
+
+Log Entry : 13:43:56 10 March 2021
+  :
+  :How long in ms to get response 17
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44313
+-------------------------------
+
+Log Entry : 13:43:57 10 March 2021
+  :
+  :How long in ms to get response 15
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44369
+-------------------------------
+
+Log Entry : 13:43:58 10 March 2021
+  :
+  :How long in ms to get response 17
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44313
+-------------------------------
+
+Log Entry : 13:43:59 10 March 2021
+  :
+  :How long in ms to get response 43
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44369
+-------------------------------
+
+Log Entry : 13:44:00 10 March 2021
+  :
+  :How long in ms to get response 12
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44313
+-------------------------------
+
+Log Entry : 13:44:01 10 March 2021
+  :
+  :How long in ms to get response 14
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44369
+-------------------------------
+
+Log Entry : 13:44:02 10 March 2021
+  :
+  :How long in ms to get response 20
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44313
+-------------------------------
+
+Log Entry : 13:44:03 10 March 2021
+  :
+  :How long in ms to get response 18
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44369
+-------------------------------
+
+Log Entry : 13:44:04 10 March 2021
+  :
+  :How long in ms to get response 17
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44313
+-------------------------------
+
+Log Entry : 13:44:05 10 March 2021
+  :
+  :How long in ms to get response 11
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44369
+-------------------------------
+
+Log Entry : 13:44:06 10 March 2021
+  :
+  :How long in ms to get response 118
+  :The call used /api/Validation/GroupCreate
+  :The host the load balancer sends it to https://localhost:44313
 -------------------------------
