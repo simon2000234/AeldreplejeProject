@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Globalization;
 using AeldreplejeCore.Core.Entity;
-using Dummy;
 
 namespace AeldreplejeCore.Core.Application.Impl
 {
