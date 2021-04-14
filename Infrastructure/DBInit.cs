@@ -128,9 +128,18 @@ namespace AeldreplejeInfrastructure
             }).Entity;
 
 
+            var shift = ctx.Add(new Shift()
+            {
+                ActiveRoute = true,
+                ShiftQualificationNumber = 3,
+                TimeStart = new DateTime(2021, 1, 1, 10, 0, 0),
+                TimeEnd = new DateTime(2021, 1, 1, 18, 0, 0)
+            }).Entity;
 
-
-
+            var pShift1 = ctx.Add(new PendingShift()
+            {
+                Shift = shift
+            }).Entity;
 
             ctx.SaveChanges();
         }
