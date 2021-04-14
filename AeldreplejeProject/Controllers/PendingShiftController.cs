@@ -82,8 +82,6 @@ namespace AeldreplejeAPI.Controllers
         // DELETE api/pendingShifts/5
         [HttpDelete("{id}")]
         [Authorize(Roles = "Administrator")]
-        [Authorize(Roles = "Administrator")]
-
         public ActionResult<PendingShift> Delete(int id)
         {
             try
