@@ -58,7 +58,7 @@ namespace AeldreplejeCore.Core.Application.Impl
 
 
         // 1. User qualification number >= shift qualification number
-        private bool IsUserQualified(PendingShift shift, User user)
+        public bool IsUserQualified(PendingShift shift, User user)
         {
             if (user.Group is null)
             {
@@ -82,7 +82,7 @@ namespace AeldreplejeCore.Core.Application.Impl
 
 
         //2. User should not receive notification if they already have a Shift that overlaps with the newly created Shift.
-        private bool IsUserAlreadyBooked(PendingShift pshift, User user)
+        public bool IsUserAlreadyBooked(PendingShift pshift, User user)
         {
             //Is pending shifts, shifts in the future.
             //Is Shifts then always in the past?
@@ -109,7 +109,7 @@ namespace AeldreplejeCore.Core.Application.Impl
         }
 
         //3. A user should not receive a notification if they already have X shifts or more in the same week as the new shift that was created.
-        private bool HasTooManyShifts(User user, DateTime newShiftDate, int MaxShifts)
+        public bool HasTooManyShifts(User user, DateTime newShiftDate, int MaxShifts)
         {
             CultureInfo culInf = CultureInfo.CurrentCulture;
             Calendar calendar = culInf.Calendar;

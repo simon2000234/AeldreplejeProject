@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadBalancer", "LoadBalance
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidationAPI2", "ValidationAPI2\ValidationAPI2.csproj", "{1D9287A6-16A1-4743-87B5-9A18A28A17F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test4TestExam", "Test4TestExam\Test4TestExam.csproj", "{6A0ECBAF-F91D-451A-BE0D-B5036D415309}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spec4TestExam", "Spec4TestExam\Spec4TestExam.csproj", "{7EC60001-7F24-4B29-9459-16609446C905}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{1D9287A6-16A1-4743-87B5-9A18A28A17F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D9287A6-16A1-4743-87B5-9A18A28A17F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D9287A6-16A1-4743-87B5-9A18A28A17F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A0ECBAF-F91D-451A-BE0D-B5036D415309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A0ECBAF-F91D-451A-BE0D-B5036D415309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A0ECBAF-F91D-451A-BE0D-B5036D415309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A0ECBAF-F91D-451A-BE0D-B5036D415309}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EC60001-7F24-4B29-9459-16609446C905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EC60001-7F24-4B29-9459-16609446C905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EC60001-7F24-4B29-9459-16609446C905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EC60001-7F24-4B29-9459-16609446C905}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
