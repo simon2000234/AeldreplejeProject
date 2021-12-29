@@ -34,7 +34,7 @@ namespace AeldreplejeCore.Core.Application.Impl
                     break;
                 }
 
-                if ( !IsUserQualified(shift, user))
+                if (!IsUserQualified(shift, user))
                 {
                     break;
                 }
