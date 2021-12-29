@@ -19,4 +19,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AeldreplejeCore\AeldreplejeCore.csproj" />
+    <ProjectReference Include="..\Infrastructure\AeldreplejeInfrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
