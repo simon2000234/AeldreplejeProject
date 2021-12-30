@@ -12,13 +12,13 @@ using Xunit;
 
 namespace Test4TestExam
 {
-    public class UnitTest1
+    public class NotificationServiceTest
     {
         private IUserRepo moqUserRepo;
         private IPendingShiftRepo moqPendingShiftRepo;
         private NotificationService ns = new NotificationService();
 
-        public UnitTest1()
+        public NotificationServiceTest()
         {
             IList<Group> groups = new List<Group>
             {
