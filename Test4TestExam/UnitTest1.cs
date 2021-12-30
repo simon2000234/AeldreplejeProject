@@ -274,7 +274,7 @@ namespace Test4TestExam
 
         // IsUserAlreadyBooked tests
 
-        // Rød
+        // Rød - Mutli Conditions True/True
         [Fact]
         public void IsUserAlreadyBooked_UserAlreadyBooked_TimeStartWithinShiftPeriod_ReturnTrue()
         {
@@ -298,7 +298,55 @@ namespace Test4TestExam
             Assert.True(result);
         }
 
-        // Lilla
+        // Rød 2 - Mutli Conditions False/-
+        [Fact]
+        public void IsUserAlreadyBooked_UserAlreadyBooked_TimeStartLessThanCurrentTimeStart_ReturnFalse()
+        {
+            // Arrange
+            var user = moqUserRepo.GetUser(3);
+            var pshift = moqPendingShiftRepo.GetPendingShift(1);
+            user.Shifts = new List<Shift>
+            {
+                new Shift
+                {
+                    Date = pshift.Shift.Date,
+                    TimeStart = pshift.Shift.TimeStart.AddHours(1),
+                    TimeEnd = pshift.Shift.TimeEnd
+                },
+            };
+
+            // Act
+            var result = ns.IsUserAlreadyBooked(pshift, user);
+
+            // Assert
+            Assert.False(result);
+        }
+
+        // Rød 3 - Mutli Conditions True/False
+        [Fact]
+        public void IsUserAlreadyBooked_UserAlreadyBooked_TimeStartLessThanCurrentTimeEnd_ReturnFalse()
+        {
+            // Arrange
+            var user = moqUserRepo.GetUser(3);
+            var pshift = moqPendingShiftRepo.GetPendingShift(1);
+            user.Shifts = new List<Shift>
+            {
+                new Shift
+                {
+                    Date = pshift.Shift.Date,
+                    TimeStart = pshift.Shift.TimeStart.AddHours(-2),
+                    TimeEnd = pshift.Shift.TimeEnd.AddHours(-9)
+                },
+            };
+
+            // Act
+            var result = ns.IsUserAlreadyBooked(pshift, user);
+
+            // Assert
+            Assert.False(result);
+        }
+
+        // Lilla - Mutli Conditions True/True
         [Fact]
         public void IsUserAlreadyBooked_UserAlreadyBooked_TimeEndWithinShiftPeriod_ReturnTrue()
         {
@@ -320,6 +368,54 @@ namespace Test4TestExam
 
             // Assert
             Assert.True(result);
+        }
+
+        // Lilla 2 - Mutli Conditions False/-
+        [Fact]
+        public void IsUserAlreadyBooked_UserAlreadyBooked_TimeEndLessThanCurrentTimeStart_ReturnFalse()
+        {
+            // Arrange
+            var user = moqUserRepo.GetUser(3);
+            var pshift = moqPendingShiftRepo.GetPendingShift(1);
+            user.Shifts = new List<Shift>
+            {
+                new Shift
+                {
+                    Date = pshift.Shift.Date,
+                    TimeStart = pshift.Shift.TimeStart.AddHours(12),
+                    TimeEnd = pshift.Shift.TimeEnd
+                },
+            };
+
+            // Act
+            var result = ns.IsUserAlreadyBooked(pshift, user);
+
+            // Assert
+            Assert.False(result);
+        }
+
+        // Lilla 3 - Mutli Conditions True/False
+        [Fact]
+        public void IsUserAlreadyBooked_UserAlreadyBooked_TimeEndGreaterThanCurrentTimeEnd_ReturnFalse()
+        {
+            // Arrange
+            var user = moqUserRepo.GetUser(3);
+            var pshift = moqPendingShiftRepo.GetPendingShift(1);
+            user.Shifts = new List<Shift>
+            {
+                new Shift
+                {
+                    Date = pshift.Shift.Date,
+                    TimeStart = pshift.Shift.TimeStart,
+                    TimeEnd = pshift.Shift.TimeEnd.AddHours(-1)
+                },
+            };
+
+            // Act
+            var result = ns.IsUserAlreadyBooked(pshift, user);
+
+            // Assert
+            Assert.False(result);
         }
 
         // Blå
@@ -389,7 +485,7 @@ namespace Test4TestExam
 
         // HasTooManyShifts tests
 
-        // Rød
+        // Rød Multi Conditions True/True
         [Fact]
         public void HasTooManyShifts_UserHasMaximumShifts_ReturnTrue()
         {
@@ -408,6 +504,48 @@ namespace Test4TestExam
 
             // Assert
             Assert.True(result);
+        }
+
+        // Rød 2 - Multi Conditions False/-
+        [Fact]
+        public void HasTooManyShifts_NewShiftDifferentWeek_ReturnFalse()
+        {
+            // Arrange
+            var user = moqUserRepo.GetUser(3);
+            var newPShift = moqPendingShiftRepo.GetPendingShift(5);
+            var pshifts = moqPendingShiftRepo.GetAllPendingShift();
+            user.Shifts = new List<Shift>();
+            foreach (var pshift in pshifts)
+            {
+                user.Shifts.Add(pshift.Shift);
+            }
+
+            // Act
+            var result = ns.HasTooManyShifts(user, newPShift.Shift.Date.AddDays(14), 5); // Max 5 shifts in a week
+
+            // Assert
+            Assert.False(result);
+        }
+
+        // Rød 3 - Multi Conditions True/False
+        [Fact]
+        public void HasTooManyShifts_NewShiftDifferentYear_ReturnFalse()
+        {
+            // Arrange
+            var user = moqUserRepo.GetUser(3);
+            var newPShift = moqPendingShiftRepo.GetPendingShift(5);
+            var pshifts = moqPendingShiftRepo.GetAllPendingShift();
+            user.Shifts = new List<Shift>();
+            foreach (var pshift in pshifts)
+            {
+                user.Shifts.Add(pshift.Shift);
+            }
+
+            // Act
+            var result = ns.HasTooManyShifts(user, newPShift.Shift.Date.AddYears(1), 5); // Max 5 shifts in a week
+
+            // Assert
+            Assert.False(result);
         }
 
         // Grøn
